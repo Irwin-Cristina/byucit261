@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>JavaScript Loops</title>
+
+   
+</head>
+        
+    
+<body>
+    <h1>Loops</h1>
+        <h2>While</h2>
+            <script>
+                var x = 0
+				while (x < 101) {
+				document.write(x + " ");
+				x=x + 5;
+				}
+                
+                function countDown() {
+                    var output = "";
+                    var skip = parseInt(document.getElementById('integer').value);
+                    var i = 100;
+                        while (i >= 0) {
+                        output += i + "<br>";
+                        i -= skip;
+                        }
+                        document.getElementById('output').innerHTML = output;
+                        }
+            </script>
+            <p>Skip count 1 thru 100</p> <input type = "text" id = 'integer'>
+            <button type="button" onclick ="countDown()">count</button>
+
+            <div id="output"></div>
+    
+        <h2>For</h2>
+            <script>
+                for(var i = 0; i < 10; i++) {
+				    document.write( i + "<br/>");
+                }
+            </script>
+    
+        <h2>For Each</h2>
+            <script>
+                const arr = ['cat', 'dog', 'fish'];
+                 for (i=0; i< arr.length; i++) {
+                document.write(arr[i] + " ");
+                     }
+            </script>
+    
+    <h2>Do While</h2>
+            <a href="#" onClick='doSomething()'>Click on me to activate Do While loop</a>
+        
+        
+            <script>
+                function doSomething() {
+                var alias, response;
+                do {
+                    alias = window.prompt("What is your name?");
+                    response = window.prompt("Are you sure " + alias + " is your name?");
+                } while (response != "yes");
+                window.alert("Hello " + alias);
+                    }
+            </script>
+        
+            
+            
+    
+    </body>
+</html>

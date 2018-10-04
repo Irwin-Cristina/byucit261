@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Functions</title>
+   
+</head>
+        
+    
+<body>
+    <h1>Functions</h1>
+    <h2>Calculate Wind Chill</h2>
+    <h3>Please provide the following information:</h3><br>
+    <h4>Temperature in Fº:<input type="text" value="temperature" id='tInputBox' size="12"></h4>
+    <br>
+    <h4>Wind Speed in MPH:<input type="text" value="wind speed" id='sInputBox' size="12"></h4>
+    <br>
+    <button type="button" onclick="doInputOutput()">Wind chill</button>
+    <div id="outputDiv"></div>
+    <!--<h2>Let's add some arguments, Cristina and 34.</h2>
+    <a href="#" onClick='goAgain()'>Click on me to add arguments</a>
+    <h3>Let's use the function and add more names and ages, Isabella and 23, Scott and 12.</h3>
+    
+-->
+    
+    <script>
+    
+        function go(){
+            alert('hi');
+            alert('hi there');
+        }
+        go();
+        
+        
+        function doInputOutput() {
+            var t = document.getElementById('tInputBox').value; //get a temperature from the first text field
+            var s = document.getElementById('sInputBox').value; //get a wind speed from the second text field
+            var wchill = windChill(t, s) //store the value returned by windChill in a variable
+            document.getElementById ('outputDiv').innerHTML = "Wind Chill factor is " + wchill + " Fahrenheit";
+        } //output the value returned//
+
+// Compute windchill using inputs and return wind chill
+
+// taking temperature and speed from first function
+        function windChill(tempF, speed)  {
+            return Math.round(35.74 + (0.6215 * tempF) - (35.75 * (speed ** 0.16)) + ((0.4275 * tempF) * (speed ** 0.16)));
+} //calculating with 
+        
+        /*function goAgain(name, age){
+            document.write("My name is "+ name + "<br>");
+            document.write("I am " + age + " years old." +"<br>");
+        }
+        goAgain('Cristina', 43);
+        
+        function goMore(name, age){
+            document.write("<br>")
+            document.write("My name is "+ name + "<br>");
+            document.write("I am " + age + " years old." +"<br>");
+        }
+        goMore('Isabella', 23);
+        goMore('Scott', 12);*/
+        
+</script>
+        
+  
+        
+    
+    </body>
+</html>

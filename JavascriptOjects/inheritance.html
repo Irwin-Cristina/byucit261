@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>JavaScript Objects-Inheritance</title>
+
+   
+</head>
+        
+    
+<body>
+    <p>Inheritance</p>
+</body>
+     <script>
+         // Establish a parent class
+        function Parentclass() {
+            this.parent_property1 = "Hola";
+            this.parentmethod1 = function parentmethod1(arg1) { 
+                return arg1 + "Parent method 1 return data . . .";
+            }
+        }
+         
+         // Establish a child class
+        function Childclass() {
+            this.child_property1 = "Adios";
+            this.childmethod1 = function childmethod1(arg1) { 
+                return arg1 + "Child method 1 return data . . .";
+            }
+        }
+         
+         //Make the Childclass inherit all the Parent class characteristics
+         // by usint the protype property.
+         Childclass.prototype = new Parentclass();
+         
+         //Creates a new instance of Childclass
+         var instance1 = new Childclass();
+         
+         //Check to see if instance1 is an instance of both objects
+         alert(instance1 instanceof Parentclass); //alerts true
+         alert(instance1 instanceof Childclass); // alerts true
+         
+         //Access the instance method and properties
+         
+         alert(instance1.parentmethod1("RESULT: ")); 
+         // RESULT: Parent method 1 return data . . .
+         
+         alert(instance1.childmethod1("RESULT; "));  
+         // RESULT: Child method 1 return data . . .
+         
+         alert(instance1.parent_property1);  // Hola
+         alert(instance1.child_property1);  // Adios
+         
+    </script>
+    
+</html>

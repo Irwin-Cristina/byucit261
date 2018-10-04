@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>JavaScript Objects-Instantiation</title>
+
+   
+</head>
+        
+    
+<body>
+    <p>Instantiation</p>
+</body>
+     <script>
+         function species(nm,latin, status)
+            {this.nm = nm;
+              this.latin = latin;
+              this.status = status;
+            }
+         
+         var x =
+             new species
+            ("Bonobo", 
+             "Pan Paniscus", 
+             "endangered");
+        
+         document.write(x.nm);
+         document.write("<br/>");
+         document.write(x.latin);
+         document.write("<br/>");
+         document.write(x.status);
+         
+        
+    </script>
+    
+</html>

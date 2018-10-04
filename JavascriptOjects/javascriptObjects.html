@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>JavaScript Objects</title>
+
+   
+</head>
+        
+    
+<body>
+    <p>JavaScript Objects</p>
+</body>
+     <script>
+        var car = {type: "Fiat", model: "500", color: "white"};
+         
+         
+        var person = {
+            firstName:"John", 
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue"
+        };
+
+        var person = new Object ();
+            person.firstName = "John";
+            person.lastName = "Doe";
+            person.age = 50;
+            person.eyeColor = "blue";
+         
+         
+         
+         function fruits() {
+             this.name = 'friut 1';
+         }
+         
+         function apple() {
+            fruits.call(this);
+         }  
+         
+         apple.prototype = Object.create(fruits.prototype);
+         const app = new apple();
+         console.log(app.name);   //output "fruit 1"
+        
+    </script>
+    
+</html>

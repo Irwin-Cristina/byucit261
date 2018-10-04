@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>JavaScript Conditional Statements</title>
+
+   
+</head>
+        
+    
+<body>
+    <h1>Conditional Statements</h1>
+        <h2>If Statements</h2>
+        <a href="#" onClick='doSomething()'>Click on me to activate IF statement</a>
+    
+            
+    
+    <h2>If . . . else Statements</h2>
+        <a href="#" onClick='getTime()'>Click on me to see if it is morning or afternoon</a>
+    
+    <h2>Switch statement</h2>
+    <p>What is the weather today hot, rain or snow?:</p> <input id="weather" type="text" ><br>
+    <button onclick="whichShoes()">Which Shoes should I wear?</button>
+    <div id="footwearDiv"></div>  
+           
+    
+    <h2>If . . . else . . . else Statements</h2>
+        <a href="#" onClick='guessNumber()'>Click on me</a>
+    
+           
+            
+    
+    
+    <script>
+        /*
+        Code for if Conditional Statements
+        */
+        function doSomething() {
+        var age = prompt("Please enter your age");
+            if(age>=18)
+                window.alert("You are an adult");
+            if(age<18)
+                window.alert("You are NOT an adult");
+            }
+        
+        /*
+        Code for if . . .else Conditional Statements
+        */
+        function getTime() {
+        var hours = new Date().getHours();
+            if (hours<12)
+                window.alert("Good Morning!!!!");
+            else
+                 window.alert("Good Afternoon!!!!");
+            }
+        
+        
+        /*
+        Code for if . . .else . . .else Conditional Statements
+        */
+        function guessNumber() {
+        var one = prompt("Enter the first number");
+        var two = prompt("Enter the second number");
+            one = parseInt(one);
+            two = parseInt(two);
+            if (one == two)
+                document.write(one + " is equal to " + two + ".");
+            else if (one<two)
+                document.write(one + " is less than " + two + ".");
+		    else
+			    document.write(one + " is greater than " + two + ".");
+
+            }
+        
+        /* Input: User inputs weather
+        /* Processing: Determine which shoes user should wear for weather.
+        /* Output: Type of shoes to wear
+        */
+
+            function whichShoes() {
+            // User inputs type of weather.
+            var footwear;
+            var weather = document.getElementById('weather').value;
+
+            // Determine which shoe user should wear based on input for weather.
+            switch (weather) {
+            case "hot":
+	           footwear = "sandals";
+	           break;
+            case "rain":
+	           footwear = "galoshes";
+	           break;
+            case "snow":
+	           footwear = "boots";
+	           break;
+            default:
+	           footwear = "shoes" 
+	       }
+	
+            // Display shoes to wear.
+            document.getElementById('footwearDiv').innerHTML = footwear;
+            }
+</script>
+        
+  
+        
+    
+    </body>
+</html>
