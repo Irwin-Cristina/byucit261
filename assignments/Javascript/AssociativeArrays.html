@@ -10,9 +10,61 @@
 <body>
     
     
-    <script>
+<script>
     
+    var arr = {"one": 1, "two": 2, "three": 3};
+    
+    var y = ["one"];
+    
+    var o = new Object();
+        o["one"] = 1;
+        o["two"] = 2;
+        o["three"] = 3;
         
+        for(var i in o) {
+            
+            document.write(i + "=" + o[i] + '<br>');
+        }
+            
+    var oa = new Object();
+        oa.one = 1;
+        oa.two = 2;
+        oa.three = 3;
+    
+        for(var i in oa) {
+            
+            document.write(i + "=" + o[i] + '<br>');
+        }
+    
+    var arr = { "one" : 1, "two" : 2, "three": 3};
+    for(var key in arr)   {
+        var value = arr[key];
+        document.write(key + " = " + value + '<br>');
+    }
+    
+    Object.size = function(arr)
+        {
+            var size = 0;
+            for (var key in arr)
+            {
+                if (arr.hasOwnProperty(key)) size++;
+            }
+            return size;
+    };
+    
+        /*var s = Object.size(x);
+        document.write("Size=" + s);
+    
+        Object.keys(arr)
+        Object.keys(arr).length
+        
+        var a2 = { "a":1, "b":2, "c":3 }
+        document.write("Size" + Object.keys(a2).length);
+    
+        var a3 = Object.key(a2).map(function (k) {return a2[k];});
+        document.write(a3)
+    */
+             
         
 </script>
         
