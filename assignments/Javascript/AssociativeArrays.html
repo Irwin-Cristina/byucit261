@@ -5,42 +5,54 @@
     <title>Associative Arrays</title>
    
 </head>
+        <h1>Associative Arrays</h1>
+        <p>Ways to write an Associative array. Look at the source code to see how each is called.</p>
         
+        <h2>Declared Associative Array</h2>
+        <button type="button" onclick="declared()">See declared Associative Array</button>
+        <div id="outputDiv1"></div>
+
+    
+        <h2>An Associative Array is scanned with for <i>in</i></h2>
+        <button type="button" onclick="scanned()">Associative Array with keyword Object</button>
+        <div id="outputDiv3"></div>
+    
+        <h2>See the Associative array</h2>
+        <p>Open console and type book. You will see the book array. Type book[title] and see what happens. Type book.isbn and see what happens.</p>
+    
     
 <body>
     
     
 <script>
-    
+    function declared() {
     var arr = {"one": 1, "two": 2, "three": 3};
     
-    var y = ["one"];
     
     var o = new Object();
-        o["one"] = 1;
+        o["blue"] = 1;
         o["two"] = 2;
         o["three"] = 3;
         
         for(var i in o) {
             
             document.write(i + "=" + o[i] + '<br>');
-        }
             
-    var oa = new Object();
-        oa.one = 1;
-        oa.two = 2;
-        oa.three = 3;
-    
-        for(var i in oa) {
-            
-            document.write(i + "=" + o[i] + '<br>');
         }
+            document.getElementById('outputDiv1');
+    }
     
-    var arr = { "one" : 1, "two" : 2, "three": 3};
+    
+    
+    function scanned() {
+    var arr = { color: "blue", food: "mac and cheese", car: "Honda Pilot"};
     for(var key in arr)   {
         var value = arr[key];
         document.write(key + " = " + value + '<br>');
+        
     }
+        document.getElementById('outputDiv3');
+        }
     
     Object.size = function(arr)
         {
@@ -52,19 +64,10 @@
             return size;
     };
     
-        /*var s = Object.size(x);
-        document.write("Size=" + s);
-    
-        Object.keys(arr)
-        Object.keys(arr).length
         
-        var a2 = { "a":1, "b":2, "c":3 }
-        document.write("Size" + Object.keys(a2).length);
+            var book = {title: 'The Lion the Witch and the Wardrobe', author: 'CS Lewis', isbn:'0-590-25476-6', pages: '189'};
     
-        var a3 = Object.key(a2).map(function (k) {return a2[k];});
-        document.write(a3)
-    */
-             
+            
         
 </script>
         
