@@ -11,15 +11,113 @@
     
     <body>
         <header>
-        <h1>JSON.parse()</h1>
+        <h1>JSON.parse</h1>
         </header>
         
-        <nav></nav>
         
         <main>
+            <button type="button" onclick="parse()">Click me to parse to window</button>
+            <div id="outputDiv"></div>
             
+            <button type="button" onclick="parseInOneLevel()">Click me to parse to console</button>
+            <div id="outputDivTwo"></div>
             
+            <ul id="familyMembers"></ul>
+        
         </main>
+        <script>
+            
+            function parse() {
+            var music = {
+                instrument: "Cello",
+                type: "String",
+                size: "large" ,
+                price: "$2000"
+            }
+            
+        music = JSON.stringify(music);
+        music = JSON.parse(music);    
+        
+        console.log(music.instrument);
+        document.write(music.instrument + " ");
+        console.log(music.type);
+        document.write(music.type  + " ");
+        console.log(music.size);
+        document.write(music.size  + " ");
+        console.log(music.price);
+        document.write(music.price  + " ");
+            
+        console.log(music);
+                
+        document.getElementById ('outputDiv');
+        
+        }
+            
+            function parseInOneLevel() {
+            var person = {
+	           "name":"Scott Irwin",
+	           "age":45,
+	           "address":{
+		       "street":"6752 Canterbury Way",
+		       "city": "Highland"
+		          },
+	           "children": ["Isa", "Isaac", "Simon"]
+                };
+                
+            console.log(person.address.street);
+                
+            document.getElementById ('outputDivTwo');
+            
+            console.log(person.children[0]);
+                
+                }
+            
+            //function family() {
+                var familyMembers = [
+                   {
+                   
+                   name: "Scott",
+                   age: 45
+                   
+                   },
+                   {
+                        
+                    name: "Cristina",
+                    age: 43
+                        
+                    },
+                    {
+                        
+                    name: "Isa",
+                    age: 16    
+                        
+                    },
+                    {
+                        
+                    name: "Isaac",
+                    age: 14   
+                        
+                    },
+                    {
+                        
+                    name: "Simon",
+                    age: 11   
+                        
+                    }
+                    
+                ];
+            
+                //console.log(familyMembers[3].age);
+                var familyList = ' ';
+            
+                for(var i = 0; i < familyMembers.length; i++){
+                    //console.log(familyMembers[i]);
+                    familyList += '<li>'+familyMembers[i].name + '</i>';
+                }
+                document.getElementById('familyMembers').innerHTML = familyList;
+            //}
+        
+        </script>
     
     </body>
         </html>

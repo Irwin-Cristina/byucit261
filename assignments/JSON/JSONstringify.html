@@ -14,12 +14,32 @@
         <h1>JSON.stringify()</h1>
         </header>
         
-        <nav></nav>
         
         <main>
-            
+            <button type="button" onclick="stringify()">Click me to stingify</button>
+            <div id="outputDiv"></div>
            
         </main>
+        <script>
+            
+            function stringify() {
+            
+            var music = {
+                instrument: "Cello",
+                type: "String",
+                size: "large" ,
+                price: "$2000"
+            }
+            
+            document.getElementById ('outputDiv');
+                
+            music = JSON.stringify(music);
+            console.log(music);
+            document.write(music);
+                }
+        
+        
+        </script>
     
     </body>
         </html>
