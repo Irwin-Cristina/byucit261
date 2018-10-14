@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>JSON | Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="JSON for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        
+        
+    </head>
+    
+    <body>
+        <header>
+        <h1>AJAX</h1>
+        </header>
+        <div id="displayDiv">
+        <button type="button"
+                onclick="load('Cristina.txt', 'displayDiv', false)">See Text File
+                </button>
+        </div>   
+        
+        <div id="displayJSONDiv">
+        <button type="button"
+                onclick="load('Cristina.txt', '/JSON/people.json', true)">See JSON File
+                </button>
+         </div>
+        
+        <!--<button type="button"
+                onclick="load('Cristina.txt', 'displayDiv', false)">See Text File
+                </button>-->
+       
+        
+      
+        <script>
+            
+            //Create a request 
+            function load() {
+               var xhttp = new XMLHttpRequest(); //Gets a connection to the server
+                    xhttp.onreadystatechange = function() //function called once file is delivered from server.
+                        {
+                            if (this.readyState == 4 && this.status == 200) { // 4 readyState means document has been sent. There are a total of 5 states. 0 is function has not been called. 1 is function has been called. 2 is function called and headers and status are available. 3 means is downloading and hold partial data.
+                            //what is the status 200? This means request was recieved, understood and accepted. A well functioning url is responding and the connection is working. We have to wait for a 200 and 4.
+                            document.getElementById("displayDiv").innerHTML = this.responseText; // if yes then put text into a div
+                    }
+              };
+                xhttp.open("GET", "Cristina.txt", true); //Tell server how to deliver file, what we want(file) and if it is asycnchronous or not
+                xhttp.send(); //execute
+                }
+            
+            function loadJSON() {
+               var xhttp = new XMLHttpRequest(); //Gets a connection to the server
+                    xhttp.onreadystatechange = function() //function called once file is delivered from server.
+                        {
+                            if (this.readyState == 4 && this.status == 200) { // 4 readyState means document has been sent. There are a total of 5 states. 0 is function has not been called. 1 is function has been called. 2 is function called and headers and status are available. 3 means is downloading and hold partial data.
+                            //what is the status 200? This means request was recieved, understood and accepted. A well functioning url is responding and the connection is working. We have to wait for a 200 and 4.
+                            document.getElementById("displayJSONDiv").innerHTML = this.JSON.parse; // if yes then put text into a div
+                    }
+              };
+                xhttp.open("GET", '/JSON/people.json', true); //Tell server how to deliver file, what we want(file) and if it is asycnchronous or not
+                xhttp.send(); //execute
+                }
+            
+            //function myFunction(xhttp) {
+                //document.getElementById("displayDiv").innerHTML = xhttp.responseText;
+            //}
+            
+               /* var familyList = ' ';
+            
+                for(var i = 0; i < familyMembers.length; i++){
+                    //console.log(familyMembers[i]);
+                    familyList += '<li>'+familyMembers[i].name + '</i>';
+                }
+                document.getElementById('familyMembers').innerHTML = familyList;
+            //}
+            
+            //from w3schools
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+               console.log(xhttp.responseText);
+                }
+            };
+            xhttp.open("GET", "people.json", true);
+            xhttp.send();*/
+        
+        </script>
+    
+    </body>
+        </html>
