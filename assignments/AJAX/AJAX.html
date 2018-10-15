@@ -73,28 +73,28 @@
                 </button>-->
         
 
-	<h2>Here is an example of how AJAX works with different file types.</h2>
+	<h2>Here is an example of how AJAX works with different file types. This demonstraton will show AJAX using a .txt file, a .json file and a .html file.</h2>
 	<p>Click and view the source to see how basic this example is.</p>
 	
-	<p><strong>Read a small file</strong> will read a text file and replace the button with the text of the source file</p>
+	<p><strong>Read a .txt file</strong> will read a text file and replace the button with the text of the source file</p>
     
 	<div id="serverState"></div>
 	<div id="Textdiv">
-		<input type="button" value="Read a small file" onclick="getFileFromServer( 'Cristina.txt', 'Textdiv', false )"/>
+		<input type="button" value="Read a .txt file" onclick="getFileFromServer( 'Cristina.txt', 'Textdiv', false )"/>
 	</div>
 	<p>
-	<strong>Read a JSON file</strong> will read a JSON file and replace the button with the text of the source file</p>
+	<strong>.json file</strong> will read a JSON file and display source file.</p>
 	
 	<div id="JSONdiv">
-		<input type="button" value="Read a JSON file" onclick="getFileFromServer( 'https://irwin-cristina.github.io/byucit261.github.io/assignments/AJAX/people.json', 'JSONdiv', true )"/>
+		<input type="button" value="Read a .json file" onclick="getFileFromServer( 'https://irwin-cristina.github.io/byucit261.github.io/assignments/AJAX/people.json', 'JSONdiv', true )"/>
 	</div>
 	
 	<div id="JSONdiv2"></div>
 	
-	<p><strong>Read an HTML file</strong> will read an HTML file and replace the button with the HTML of the source file</p>
+	<p><strong>.html file</strong> will read an HTML file and replace the button with the HTML of the source file</p>
 	
 	<div id="HTMLdiv">
-		<input type="button" value="Read a HTML file" onclick="getFileFromServer( 'HTMLExample.html', 'HTMLdiv', false )"/>
+		<input type="button" value="Read a .html file" onclick="getFileFromServer( 'HTMLExample.html', 'HTMLdiv', false )"/>
 	</div>
 
        
@@ -178,6 +178,8 @@
 					//	This method is going to serve a several kinds of requests
 					//	we are taking the 2nd and 3rd fields from the onclick request and passing them to the worked function
 					doSomethingWithTheResponse(xmlhttp.responseText, divId, isJSON); //Server response
+        else	// this will show us what is happening before the data arrives
+			document.getElementById( 'serverState' ).innerHTML += "Ready State: " + xmlhttp.readyState + "  Status: " + xmlhttp.status + "<BR>";
         
 			}
 	//	This is where we make our request to the server. We are passing along the URL for the file we want
