@@ -11,9 +11,9 @@
                    "age": 45,
                    "hobbies" : "Soccer, kids" ,
                    "powers" : [
-                       "funny", 
                        "smart", 
-                       "kind"
+                       "hardworking", 
+                       "salmon griller"
                    ]
                    },
                    {
@@ -22,9 +22,9 @@
                     "age": 43,
                     "hobbies" : "Music, reading, school",
                     "powers" : [
-                       "funny", 
+                       "persistant", 
                        "smart", 
-                       "kind"
+                       "time manager"
                     ]   
                     },
                     {
@@ -34,8 +34,8 @@
                     "hobbies" : "Soccer, cello, piano, and friends",
                     "powers" : [
                        "funny", 
-                       "smart", 
-                       "kind"
+                       "hardworking", 
+                       "compassionate"
                    ]    
                     },
                     {
@@ -44,9 +44,9 @@
                     "age": 14,
                     "hobbies" : "Soccer, piano, guitar",
                     "powers" : [
-                       "funny", 
-                       "smart", 
-                       "kind"
+                       "determined", 
+                       "silly", 
+                       "smart"
                    ]   
                     },
                     {
