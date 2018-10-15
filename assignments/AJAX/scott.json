@@ -1,6 +1,6 @@
 {
     "irwinFamily": "This is everyone in the Family",
-    "divStyle" : "<div style ='color:purple'>This is the value</div>",
+    "divStyle" : "<div id='json' style ='color:purple'>This is the value</div>",
     "color" : "#d0204e",
     "size" : 36,
     "number" : "5 people",

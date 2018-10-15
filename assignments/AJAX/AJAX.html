@@ -26,7 +26,6 @@
                 color:blue;
             }
             div {
-                color:green;
                 font-family: monospace;
                 margin: 50px;
             }
@@ -86,7 +85,7 @@
 	<strong>.json file</strong> will read a JSON file and display source file.</p>
 	
 	<div id="JSONdiv">
-		<input type="button" value="Read a .json file" onclick="getFileFromServer( 'https://irwin-cristina.github.io/byucit261.github.io/assignments/AJAX/people.json', 'JSONdiv', true )"/>
+		<input type="button" value="Read a .json file" onclick="getFileFromServer( 'https://irwin-cristina.github.io/byucit261.github.io/assignments/AJAX/scott.json', 'JSONdiv', true )"/>
 	</div>
 	
 	<div id="JSONdiv2"></div>
@@ -200,9 +199,9 @@ function doSomethingWithTheResponse(response, divId, isJSON)
 
 	//	magic happens
 	if (isJSON) {
-		document.getElementById( divId+"2" ).innerHTML = "Just the text<BR>" + response;
+		document.getElementById( divId + "2" ).innerHTML = "<p>Just the text<br></p>" + response;
         
-        function header(jsonObj) {
+        /*function header(jsonObj) {
             var myH1 = document.createElement('h1');
             myH1.textContent = jsonObj['irwinFamily'];
             header.appendChild(myH1);
@@ -210,9 +209,9 @@ function doSomethingWithTheResponse(response, divId, isJSON)
             var myPara = document.createElement('p');
             myPara.textContent = 'Location: ' + jsonObj['location'] + 'Established ' + jsonObj[established];
             header.appendChild(myPara);
-            }
+            }*/
         
-        function showMembers(jsonObj) {
+        /*function showMembers(jsonObj) {
             var members = showMembers['members'];
         for(var i = 0; i <members.length; i++) {
             var myDiv = document.createElement('div');
@@ -235,10 +234,13 @@ function doSomethingWithTheResponse(response, divId, isJSON)
             }
           }  
             
-        }
-		document.getElementById( divId ).innerHTML = "Fields from the JSON Object<BR>" + 
-			"User Name: " + responseText.showMembers + "<BR>" +
-			"JSON is just Key:value pairs - " + responseText.divStyle + "<BR>";
+        }*/
+		document.getElementById( divId ).innerHTML = "<h2>Fields from the JSON Object</h2>" + "Name: " + responseText.members.name;
+        
+			"JSON is just Key:value pairs - " + responseText.established + "<br>"
+            "Value is" + responseText.established;
+        
+        
 		document.getElementById( divId ).style.color = responseText.color;
 	}
 	else {
