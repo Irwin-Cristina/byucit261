@@ -20,7 +20,7 @@
                         
                     "name": "Cristina",
                     "age": 43,
-                    "favorite" : "Music, reading, school",
+                    "hobbies" : "Music, reading, school",
                     "powers" : [
                        "funny", 
                        "smart", 
@@ -31,7 +31,7 @@
                         
                     "name": "Isa",
                     "age": 16,
-                    "favorite" : "Soccer, cello, piano, and friends",
+                    "hobbies" : "Soccer, cello, piano, and friends",
                     "powers" : [
                        "funny", 
                        "smart", 
@@ -42,7 +42,7 @@
                         
                     "name": "Isaac",
                     "age": 14,
-                    "favorite" : "Soccer, piano, guitar",
+                    "hobbies" : "Soccer, piano, guitar",
                     "powers" : [
                        "funny", 
                        "smart", 
@@ -53,7 +53,7 @@
                         
                     "name": "Simon",
                     "age": 11,
-                    "favorite" : "Soccer, piano, viola",
+                    "hobbies" : "Soccer, piano, viola",
                     "powers" : [
                        "funny", 
                        "smart", 
