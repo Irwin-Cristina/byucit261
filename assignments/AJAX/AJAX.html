@@ -178,8 +178,8 @@
 					//	This method is going to serve a several kinds of requests
 					//	we are taking the 2nd and 3rd fields from the onclick request and passing them to the worked function
 					doSomethingWithTheResponse(xmlhttp.responseText, divId, isJSON); //Server response
-        else	// this will show us what is happening before the data arrives
-			document.getElementById( 'serverState' ).innerHTML += "Ready State: " + xmlhttp.readyState + "  Status: " + xmlhttp.status + "<BR>";
+        /*else	// this will show us what is happening before the data arrives
+			document.getElementById( 'serverState' ).innerHTML += "Ready State: " + xmlhttp.readyState + "  Status: " + xmlhttp.status + "<BR>";*/
         
 			}
 	//	This is where we make our request to the server. We are passing along the URL for the file we want
@@ -202,6 +202,16 @@ function doSomethingWithTheResponse(response, divId, isJSON)
 	if (isJSON) {
 		document.getElementById( divId+"2" ).innerHTML = "Just the text<BR>" + response;
         
+        function header(jsonObj) {
+            var myH1 = document.createElement('h1');
+            myH1.textContent = jsonObj['irwinFamily'];
+            header.appendChild(myH1);
+            
+            var myPara = document.createElement('p');
+            myPara.textContent = 'Location: ' + jsonObj['location'] + 'Established ' + jsonObj[established];
+            header.appendChild(myPara);
+            }
+        
         function showMembers(jsonObj) {
             var members = showMembers['members'];
         for(var i = 0; i <members.length; i++) {
@@ -215,11 +225,19 @@ function doSomethingWithTheResponse(response, divId, isJSON)
             myH2.textContent = 'Name: ' + showMembers[i].name;
             myPara1.textContent ='Age: ' + showMembers[i].age;
             myPara2.textContent = 'Hobbies: ' +showMembers[i].hobbies;
-        }   
+            myPara3.textContent = 'SuperPowers';
+            
+        var superPowers = members[i].superPowers;
+        for ( var j =0; j < superPowers.length; j++) {
+            var listMembers = document.createElement('li');
+            listMembers.textContent = superPowers[j];
+            myFamily.appendChild(listMembers);
+            }
+          }  
             
         }
 		document.getElementById( divId ).innerHTML = "Fields from the JSON Object<BR>" + 
-			"User Name: " + responseText.name + "<BR>" +
+			"User Name: " + responseText.showMembers + "<BR>" +
 			"JSON is just Key:value pairs - " + responseText.divStyle + "<BR>";
 		document.getElementById( divId ).style.color = responseText.color;
 	}
