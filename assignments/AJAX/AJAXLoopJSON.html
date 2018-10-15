@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>AJAX | Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="JSON for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        
+        <style>
+            h1 {
+                
+                color:red;
+            }
+            
+            h2 {
+                
+               color: orange; 
+            }
+            
+            h3 {
+                
+                color:pink;
+            }
+            
+            p {
+                color:blue;
+            }
+            div {
+                font-family: monospace;
+                margin: 50px;
+            }
+            
+            div #json {
+                font-family: monospace;
+                font-weight: 600;
+                margin: 10px;
+
+            }
+            
+            input {
+                font-size: 16px;
+                color: darkmagenta;
+                width: 200px;
+                height: 100px;
+                background-color: yellow;
+                text-transform: uppercase;
+            }
+            
+              #newDiv {
+                color: cadetblue;
+                font-size: 36px;
+                }
+        </style>
+    </head>
+    
+<body>        
+    <header>
+        <h1>AJAX looping through JSON Data</h1>
+        </header>
+        
+        
+
+	
+
+       
+        
+      
+        <script>
+            /*var header = document.querySelector('header');
+            //var section = document.querySelector('section');
+        
+            var requestURL = 'https://irwin-cristina.github.io/byucit261.github.io/assignments/AJAX/people.json';
+            var request = new XMLHttpRequest();
+                request.open('GET', requestURL);
+                request.responseType = 'json';
+                request.send();
+        
+                request.onload = function() {
+                var showMembers = request.response;
+                header(showMembers);
+                showMembers(showMembers);
+            }
+           
+        
+	
+        
+        function header(jsonObj) {
+            var myH1 = document.createElement('h1');
+            myH1.textContent = jsonObj['irwinFamily'];
+            header.appendChild(myH1);
+            
+            var myPara = document.createElement('p');
+            myPara.textContent = 'Location: ' + jsonObj['location'] + 'Established ' + jsonObj[established];
+            header.appendChild(myPara);
+            }
+        
+        function showMembers(jsonObj) {
+            var members = showMembers['members'];
+        for(var i = 0; i <members.length; i++) {
+            var myDiv = document.createElement('div');
+            var myH2 = document.createElement('h2');
+            var myPara1 = document.createElement('p');
+            var myPara2 = document.createElement('p');
+            var myPara3 = document.createElement('p');
+            var myFamily = document.createElement('ul');
+            
+            myH2.textContent = 'Name: ' + showMembers[i].name;
+            myPara1.textContent ='Age: ' + showMembers[i].age;
+            myPara2.textContent = 'Hobbies: ' +showMembers[i].hobbies;
+            myPara3.textContent = 'SuperPowers';
+            
+        var superPowers = members[i].superPowers;
+        for ( var j =0; j < superPowers.length; j++) {
+            var listMembers = document.createElement('li');
+            listMembers.textContent = superPowers[j];
+            myFamily.appendChild(listMembers);
+            }
+            
+            myArticle.appendChild(myH2);
+            myArticle.appendChild(myPara1);
+            myArticle.appendChild(myPara2);
+            myArticle.appendChild(myPara3);
+            myArticle.appendChild(myList);
+		
+            section.appendChild(myArticle);
+        }
+	
+}*/
+            
+    var header = document.querySelector('header');
+    var section = document.querySelector('section');
+        
+    var requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+        
+    request.onload = function() {
+    var superHeroes = request.response;
+    populateHeader(superHeroes);
+    showHeroes(superHeroes);
+    }
+    
+    function populateHeader(jsonObj) {
+        var myH1 = document.createElement('h1');
+        myH1.textContent = jsonObj['squadName'];
+        header.appendChild(myH1);
+
+        var myPara = document.createElement('p');
+        myPara.textContent = 'Hometown: ' + jsonObj['homeTown'] + ' // Formed: ' + jsonObj['formed'];
+        header.appendChild(myPara);
+    }
+        
+    function showHeroes(jsonObj) {
+        var heroes = jsonObj['members'];
+      
+    for (var i = 0; i < heroes.length; i++) {
+        var myArticle = document.createElement('article');
+        var myH2 = document.createElement('h2');
+        var myPara1 = document.createElement('p');
+        var myPara2 = document.createElement('p');
+        var myPara3 = document.createElement('p');
+        var myList = document.createElement('ul');
+
+        myH2.textContent = heroes[i].name;
+        myPara1.textContent = 'Secret identity: ' + heroes[i].secretIdentity;
+        myPara2.textContent = 'Age: ' + heroes[i].age;
+        myPara3.textContent = 'Superpowers:';
+        
+    var superPowers = heroes[i].powers;
+    for (var j = 0; j < superPowers.length; j++) {
+        var listItem = document.createElement('li');
+        listItem.textContent = superPowers[j];
+        myList.appendChild(listItem);
+    }  
+        
+    myArticle.appendChild(myH2);
+    myArticle.appendChild(myPara1);
+    myArticle.appendChild(myPara2);
+    myArticle.appendChild(myPara3);
+    myArticle.appendChild(myList);
+  }
+}
+        
+        </script>
+    
+    </body>
+        </html>

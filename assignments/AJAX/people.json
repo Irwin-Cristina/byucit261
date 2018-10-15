@@ -1,18 +1,16 @@
 {
-    "irwinFamily": "This is everyone in the Family",
-    "divStyle" : "<div style ='color:purple'>This is the value</div>",
-    "color" : "#d0204e",
-    "size" : 36,
+    "familyName": "Irwin",
     "number" : "5 people",
     "location" : "Highland, Utah",
     "established" : "1997",
+    "active": true,
     "members" : [
         {
                    
                    "name": "Scott",
                    "age": 45,
                    "hobbies" : "Soccer, kids" ,
-                   "superPowers" : [
+                   "powers" : [
                        "funny", 
                        "smart", 
                        "kind"
@@ -23,7 +21,7 @@
                     "name": "Cristina",
                     "age": 43,
                     "favorite" : "Music, reading, school",
-                    "superPowers" : [
+                    "powers" : [
                        "funny", 
                        "smart", 
                        "kind"
@@ -34,7 +32,7 @@
                     "name": "Isa",
                     "age": 16,
                     "favorite" : "Soccer, cello, piano, and friends",
-                    "superPowers" : [
+                    "powers" : [
                        "funny", 
                        "smart", 
                        "kind"
@@ -45,7 +43,7 @@
                     "name": "Isaac",
                     "age": 14,
                     "favorite" : "Soccer, piano, guitar",
-                    "superPowers" : [
+                    "powers" : [
                        "funny", 
                        "smart", 
                        "kind"
@@ -56,7 +54,7 @@
                     "name": "Simon",
                     "age": 11,
                     "favorite" : "Soccer, piano, viola",
-                    "superPowers" : [
+                    "powers" : [
                        "funny", 
                        "smart", 
                        "kind"
