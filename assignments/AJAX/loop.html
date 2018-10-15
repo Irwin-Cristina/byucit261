@@ -4,6 +4,69 @@
     <meta charset="utf-8">
 
     <title>Our superheroes</title>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+      <style>
+            
+/* || general styles */
+
+html {
+    font-family: 'Quicksand', helvetica, arial, sans-serif;
+}
+
+body {
+    width: 800px;
+    margin: 0 auto;
+}
+          
+          
+
+h1, h2 {
+    font-family: 'Merriweather', cursive;
+}
+
+/* header styles */
+
+h1 {
+    color: darkolivegreen;
+    font-size: 4rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+header p {
+    color: gray;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* section styles */
+
+section article {
+    width: 33%;
+    float: left;
+}
+
+section p {
+    margin: 5px 0;
+    font-weight: bolder
+}
+
+section ul {
+    margin-top: 0;
+}
+
+h2 {
+    color: midnightblue;
+    
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+    
+        </style>
 
    <!-- <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet"> 
     <link rel="stylesheet" href="styles/style.css">-->
@@ -23,7 +86,7 @@
     var header = document.querySelector('header');
     var section = document.querySelector('section');
         
-    var requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+    var requestURL = 'https://irwin-cristina.github.io/byucit261.github.io/assignments/AJAX/people.json';
     var request = new XMLHttpRequest();
     request.open('GET', requestURL);
     request.responseType = 'json';
@@ -37,18 +100,18 @@
     
     function populateHeader(jsonObj) {
         var myH1 = document.createElement('h1');
-        myH1.textContent = jsonObj['squadName'];
+        myH1.textContent = jsonObj['familyName'];
         header.appendChild(myH1);
 
         var myPara = document.createElement('p');
-        myPara.textContent = 'Hometown: ' + jsonObj['homeTown'] + ' // Formed: ' + jsonObj['formed'];
+        myPara.textContent = 'Location: ' + jsonObj['location']  + ' *** Established *** ' + jsonObj['established'];
         header.appendChild(myPara);
     }
         
     function showHeroes(jsonObj) {
-        var heroes = jsonObj['members'];
+        var family = jsonObj['members'];
       
-    for (var i = 0; i < heroes.length; i++) {
+    for (var i = 0; i < family.length; i++) {
         var myArticle = document.createElement('article');
         var myH2 = document.createElement('h2');
         var myPara1 = document.createElement('p');
@@ -56,12 +119,12 @@
         var myPara3 = document.createElement('p');
         var myList = document.createElement('ul');
 
-        myH2.textContent = heroes[i].name;
-        myPara1.textContent = 'Secret identity: ' + heroes[i].secretIdentity;
-        myPara2.textContent = 'Age: ' + heroes[i].age;
+        myH2.textContent = family[i].name;
+        myPara1.textContent = 'Hobbies: ' + family[i].hobbies;
+        myPara2.textContent = 'Age: ' + family[i].age;
         myPara3.textContent = 'Superpowers:';
         
-    var superPowers = heroes[i].powers;
+    var superPowers = family[i].powers;
     for (var j = 0; j < superPowers.length; j++) {
         var listItem = document.createElement('li');
         listItem.textContent = superPowers[j];
