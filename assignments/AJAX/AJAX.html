@@ -6,7 +6,45 @@
         <meta name="description" content="JSON for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
         <meta name="viewport" content="width=device-width, inital-scale=1">
         
-        
+        <style>
+            h1 {
+                
+                color:red;
+            }
+            
+            h2 {
+                
+               color: orange; 
+            }
+            
+            h3 {
+                
+                color:pink;
+            }
+            
+            p {
+                color:blue;
+            }
+            div {
+                color:green;
+                font-family: monospace;
+                margin: 50px;
+            }
+            
+            input {
+                font-size: 16px;
+                color: darkmagenta;
+                width: 200px;
+                height: 100px;
+                background-color: yellow;
+                text-transform: uppercase;
+            }
+            
+              #newDiv {
+                color: cadetblue;
+                font-size: 36px;
+                }
+        </style>
     </head>
     
 <body>        
@@ -35,7 +73,7 @@
                 </button>-->
         
 
-	<p>Here is an example of how AJAX works with different file types.</p>
+	<h2>Here is an example of how AJAX works with different file types.</h2>
 	<p>Click and view the source to see how basic this example is.</p>
 	
 	<p><strong>Read a small file</strong> will read a text file and replace the button with the text of the source file</p>
@@ -44,17 +82,17 @@
 	<div id="Textdiv">
 		<input type="button" value="Read a small file" onclick="getFileFromServer( 'Cristina.txt', 'Textdiv', false )"/>
 	</div>
-	<BR>
-	<strong>Read a JSON file</strong> will read a JSON file and replace the button with the text of the source file<BR>
-	<BR>
+	<p>
+	<strong>Read a JSON file</strong> will read a JSON file and replace the button with the text of the source file</p>
+	
 	<div id="JSONdiv">
 		<input type="button" value="Read a JSON file" onclick="getFileFromServer( 'https://irwin-cristina.github.io/byucit261.github.io/assignments/AJAX/people.json', 'JSONdiv', true )"/>
 	</div>
-	<BR>
+	
 	<div id="JSONdiv2"></div>
-	<BR>
-	<strong>Read an HTML file</strong> will read an HTML file and replace the button with the HTML of the source file<BR>
-	<BR>
+	
+	<p><strong>Read an HTML file</strong> will read an HTML file and replace the button with the HTML of the source file</p>
+	
 	<div id="HTMLdiv">
 		<input type="button" value="Read a HTML file" onclick="getFileFromServer( 'HTMLExample.html', 'HTMLdiv', false )"/>
 	</div>
