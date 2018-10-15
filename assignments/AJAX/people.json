@@ -11,35 +11,56 @@
                    
                    "name": "Scott",
                    "age": 45,
-                   "hobbies" : "Soccer, kids"
+                   "hobbies" : "Soccer, kids" ,
+                   "superPowers" : [
+                       "funny", 
+                       "smart", 
+                       "kind"
+                   ]
                    },
                    {
                         
                     "name": "Cristina",
                     "age": 43,
-                    "favorite" : "Music, reading, school"
-                        
+                    "favorite" : "Music, reading, school",
+                    "superPowers" : [
+                       "funny", 
+                       "smart", 
+                       "kind"
+                    ]   
                     },
                     {
                         
                     "name": "Isa",
                     "age": 16,
-                    "favorite" : "Soccer, cello, piano, and friends"
-                        
+                    "favorite" : "Soccer, cello, piano, and friends",
+                    "superPowers" : [
+                       "funny", 
+                       "smart", 
+                       "kind"
+                   ]    
                     },
                     {
                         
                     "name": "Isaac",
                     "age": 14,
-                    "favorite" : "Soccer, piano, guitar"
-                        
+                    "favorite" : "Soccer, piano, guitar",
+                    "superPowers" : [
+                       "funny", 
+                       "smart", 
+                       "kind"
+                   ]   
                     },
                     {
                         
                     "name": "Simon",
                     "age": 11,
-                    "favorite" : "Soccer, piano, viola"
-                        
+                    "favorite" : "Soccer, piano, viola",
+                    "superPowers" : [
+                       "funny", 
+                       "smart", 
+                       "kind"
+                   ]   
                     }
                     
  ]

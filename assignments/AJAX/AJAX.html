@@ -201,9 +201,26 @@ function doSomethingWithTheResponse(response, divId, isJSON)
 	//	magic happens
 	if (isJSON) {
 		document.getElementById( divId+"2" ).innerHTML = "Just the text<BR>" + response;
+        
+        function showMembers(jsonObj) {
+            var members = showMembers['members'];
+        for(var i = 0; i <members.length; i++) {
+            var myDiv = document.createElement('div');
+            var myH2 = document.createElement('h2');
+            var myPara1 = document.createElement('p');
+            var myPara2 = document.createElement('p');
+            var myPara3 = document.createElement('p');
+            var myFamily = document.createElement('ul');
+            
+            myH2.textContent = 'Name: ' + showMembers[i].name;
+            myPara1.textContent ='Age: ' + showMembers[i].age;
+            myPara2.textContent = 'Hobbies: ' +showMembers[i].hobbies;
+        }   
+            
+        }
 		document.getElementById( divId ).innerHTML = "Fields from the JSON Object<BR>" + 
-			"User Name: " + responseText.user.name + "<BR>" +
-			"JSON is just Key:value pairs - " + responseText.thisIsTheKey + "<BR>";
+			"User Name: " + responseText.name + "<BR>" +
+			"JSON is just Key:value pairs - " + responseText.divStyle + "<BR>";
 		document.getElementById( divId ).style.color = responseText.color;
 	}
 	else {
