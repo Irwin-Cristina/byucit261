@@ -2,7 +2,7 @@
 <html lang="en-US">
     <head>
         <meta charset="utf-8">
-        <title>JSON | Cristina Irwin | BYU-Idaho</title>
+        <title>AJAX | Cristina Irwin | BYU-Idaho</title>
         <meta name="description" content="JSON for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
         <meta name="viewport" content="width=device-width, inital-scale=1">
         
@@ -35,11 +35,11 @@
                 </button>-->
         
 
-	This is a MINIMAL example of AJAX.<BR>
-	Click and view the source to see how basic this example is.<BR>
-	<BR>
-	<strong>Read a small file</strong> will read a text file and replace the button with the text of the source file<BR>
-	<BR>
+	<p>Here is an example of how AJAX works with different file types.</p>
+	<p>Click and view the source to see how basic this example is.</p>
+	
+	<p><strong>Read a small file</strong> will read a text file and replace the button with the text of the source file</p>
+    
 	<div id="serverState"></div>
 	<div id="Textdiv">
 		<input type="button" value="Read a small file" onclick="getFileFromServer( 'Cristina.txt', 'Textdiv', false )"/>
@@ -56,7 +56,7 @@
 	<strong>Read an HTML file</strong> will read an HTML file and replace the button with the HTML of the source file<BR>
 	<BR>
 	<div id="HTMLdiv">
-		<input type="button" value="Read a HTML file" onclick="getFileFromServer( '/AJAX/HTMLFile.html', 'HTMLdiv', false )"/>
+		<input type="button" value="Read a HTML file" onclick="getFileFromServer( 'HTMLExample.html', 'HTMLdiv', false )"/>
 	</div>
 
        
@@ -71,8 +71,7 @@
                     //xhttp.onreadystatechange = 
                         //function() //function called once file is delivered from server.
                        //{
-                           // if (this.readyState == 4 && this.status == 200) { // 4 readyState means document has been sent. There are a total of 5 states. 0 is function has not been called. 1 is function has been called. 2 is function called and headers and status are available. 3 means is downloading and hold partial data.
-                            //what is the status 200? This means request was recieved, understood and accepted. A well functioning url is responding and the connection is working. We have to wait for a 200 and 4.
+                           // if (this.readyState == 4 && this.status == 200) { /
                             //document.getElementById("displayDiv").innerHTML = this.responseText; // if yes then put text into a div
                                 
                             //serverResponse(xmlhttp.responseText, displayDivId, isJSON);
@@ -117,10 +116,10 @@
             xhttp.open("GET", "people.json", true);
             xhttp.send();*/
             
-            function getFileFromServer(url, divId, isJSON)
+    function getFileFromServer(url, divId, isJSON)
 {
-	//	We need an object that allows us to make requests back to our server
-	var xmlhttp = new XMLHttpRequest();
+	//Create a request 
+	var xmlhttp = new XMLHttpRequest(); //Gets a connection to the server
 	
 	//	This object has an attribute called onreadystatechange. 
 	//	We are going to set the value of that attribute to a pointer to a function
@@ -130,34 +129,36 @@
 	//	You could also have a function defined someplace in your code and set onreadystatechange = thisIsMyFunction
 	//	both work
 	xmlhttp.onreadystatechange =
-			function()
+			function() //function called once file is delivered from server.
 			{	//	This code is not executed immedidaitely. It is call later when the server starts to respond.
 				if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                // 4 readyState means document has been sent. There are a total of 5 states. 0 is function has not been called. 1 is function has been called. 2 is function called and headers and status are available. 3 means is downloading and hold partial data.
+                
+                //what is the status 200? This means request was recieved, understood and accepted. A well functioning url is responding and the connection is working. We have to wait for a 200 and 4.    
+                    
+                    
 					//	This method is going to serve a several kinds of requests
 					//	we are taking the 2nd and 3rd fields from the onclick request and passing them to the worked function
-					doSomethingWithTheResponse(xmlhttp.responseText, divId, isJSON);
-			//	else	// this will show us what is happening before the data arrives
-			//		document.getElementById( 'serverState' ).innerHTML += "Ready State: " + xmlhttp.readyState + "  Status: " + xmlhttp.status + "<BR>";
+					doSomethingWithTheResponse(xmlhttp.responseText, divId, isJSON); //Server response
+        
 			}
 	//	This is where we make our request to the server. We are passing along the URL for the file we want
-	//	You can see the name of the file we are requesting in the about HTML code.
 	//	Each button has a different file defined
-	xmlhttp.open("GET", url, true);
-	xmlhttp.send();
+	xmlhttp.open("GET", url, true); //GET is easier to use. There are a few reasons to use POST. Those reasons are sending a large file because POST has no size limitations unlike GET. Another reason is that the information being sent needs to be secure. POST is more secure that GET.
+	xmlhttp.send(); //execute
 	
-	//	some time later the above anonymous function will be called and the file will be processed
 }
 
-//	We are going to receive our file and take what we received and do something with it on our web page
+//	get files and display on webpage
 function doSomethingWithTheResponse(response, divId, isJSON) 
 {
 	//	document.getElementById( 'serverState' ).innerHTML += "<BR>";
-	//	Look back at the HTML where the onclick action was defined for each of the different buttons 
-	//	The third field is a boolean. I am using it to flag the returning file as a JSON file (true) or text (false)
+	//	Look back at the HTML where the onclick action was defined for each of the different buttons. one gets a text file, another a .json and the third a .html file. 
+	//	The third field is a boolean, checking to see if it is a JSON file (true) or text (false)
 	//	If the data coming back is JSON we need to parse it. Otherwise we are just going to take it as is
-	var responseText = (isJSON) ? JSON.parse(response) : response;
+	var responseText = (isJSON) ? JSON.parse(response) : response; //? is a ternary operator which means it takes three operands (choices) used as a short cut for if statements.
 
-	//	Now we will take the text and do something with it
+	//	magic happens
 	if (isJSON) {
 		document.getElementById( divId+"2" ).innerHTML = "Just the text<BR>" + response;
 		document.getElementById( divId ).innerHTML = "Fields from the JSON Object<BR>" + 
