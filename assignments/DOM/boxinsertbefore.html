@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>DOM | Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="DOM Manipulation for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        
+        <style>
+        </style>
+
+    </head>
+    
+    <body>
+        
+        <div id="yellow" style="background: yellow; width: 200px; height: 30px;"></div>
+        
+        <div id="green" style="background: green; width: 200px; height: 30px;"></div>
+
+        <ul>
+                 <li><a href="insertBefore.html">Two boxes</a></li>
+<!--                <li><a href="boxappendchild.html"> AppendChild (add a Blue)</a></li>-->
+                <li> <a href="boxinsertbefore.html">InsertBefore(Add blue before Yellow)</a></li>
+                
+            </ul>
+        <script>
+            var element = document.createElement('div');
+            element.style.cssText = "width:200px; height:30px; background:blue;";
+            
+            //element.onclick = function() {
+                //alert('Hola');
+            //};
+            
+           //document.body.appendChild(element);
+            
+            //if just append, then places new element at the end of DOM.
+            
+           var target = document.getElementById('yellow');
+            document.body.insertBefore(element, target);
+            
+        </script>
+    </body>
+</html>

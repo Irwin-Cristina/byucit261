@@ -10,7 +10,7 @@
     <style>
         
 body{
-    font-family: Tahoma;
+    font-family: Helvetica;
     color: #444;
     letter-spacing: 1px;
 }
@@ -32,10 +32,14 @@ h1, h2{
 }
 
 #page-banner{
-    background: #eee ;
+    background: #d7d272 ;
     padding: 10px 0;
 
 }
+        
+a {
+     font-size: 10px;    
+}        
 
 #page-banner h1, #page-banner p{
     width: 100%;
@@ -71,12 +75,12 @@ h1, h2{
 }
 
 #book-list li:hover{
-    border-color: #9361bf;
+    border-color: #6db9c4;
 }
 
 .delete{
     float: right;
-    background: #9361bf;
+    background: #819932;
     padding: 6px;
     border-radius: 4px;
     cursor: pointer;
@@ -91,6 +95,11 @@ h1, h2{
     width: 400px;
     margin: 0 auto;
 }
+        
+#add-author{
+    width: 400px;
+    margin: 0 auto;
+}        
 
 #add-book input{
     display: block;
@@ -103,10 +112,23 @@ h1, h2{
     width: 300px;
     float: left;
 }
+        
+#add-author input{
+    display: block;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    border-radius: 4px 0 0 4px;
+    box-sizing: border-box;
+    width: 300px;
+    float: left;
+}
+        
 
 #add-book button{
-    border: 1px solid #9361bf;
-    background: #9361bf;
+    border: 1px solid #2a4d56;
+    background: #2a4d56;
     padding: 10px 20px;
     font-size: 16px;
     display: inline-block;
@@ -119,6 +141,22 @@ h1, h2{
     border-left: 0;
     color: white;
 }
+        
+#add-author button{
+    border: 1px solid #2a4d56;
+    background: #2a4d56;
+    padding: 10px 20px;
+    font-size: 16px;
+    display: inline-block;
+    margin: 0;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    width: 100px;
+    float: left;
+    margin: 20px 0;
+    border-left: 0;
+    color: white;
+}        
 
 #add-book:after{
     content: '';
@@ -126,110 +164,290 @@ h1, h2{
     clear: both;
 }
         
+#add-author:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+ 
+/*#add-book #hide{
+     width: 30px;       
+        } */
         
+#add-book label{
+        line-height: 52px;    
+}        
+        
+#add-author label{
+        line-height: 52px;    
+} 
+        
+span.author {
+      color: #6db9c4;      
+            
+}       
     </style>
 
     </head>
     
+    
     <body>
-        <div id="wrapper">
-        <header>
-        <div id="page-banner">
-            <h1 class="title">Books</h1>
-            <p>Books for Ninjas</p>
-            <form id="search-books">
-                <input type="text" placeholder="Search books. . ."/>
-            </form>
-            </div>
-        </header>
-        <div id="book-list">
-            <h2 class="title">Books to Read</h2>
-            <ul>
-                <li>
-                    <span class="name">Flight Behavior</span>
-                    <span class="delete">delete</span>
-                </li>
-                
-                <li>
-                    <span class="name">All the Light We Cannot See</span>
-                    <span class="delete">delete</span>
-                </li>
-                
-                <li>
-                    <span class="name">Plain Truth</span>
-                    <span class="delete">delete</span>
-                </li>
-                
-                <li>
-                    <span class="name">Precious Bane</span>
-                    <span class="delete">delete</span>
-                </li>
-            </ul>
-        </div>
-        <form id="add-book">
-            <input type="text" placeholder="Add a book . . . "/>
-            <button>Add</button>
-        </form>
+  	<div id="wrapper">
+	    <header>
+	    	<div id="page-banner">
+	    		<h1 class="title">My Home Library</h1>
+          <p>Books to enjoy</p>
+            <a href="http://bellapaperdesign.com">designed by Bella Paper Design</a>
+          <!--<form id="search-books">
+            <input type="text" placeholder="Search books..." />
+          </form>-->
+	    	</div>
+	    </header>
+	    <div id="book-list">
+	    	<h2 class="title">Books in Library</h2>
+            
+	    	<ul>
+	    		<li>
+	    			<span class="name">Flight Behavior by </span>
+                    <span class="author"> Barbara Kingsolver</span>
+	    			<span class="delete">delete</span>
+	    		</li>
+	    		<li>
+	    			<span class="name">All the Light We Cannot See by </span>
+                    <span class="author">Anthony Doerr</span>
+	    			<span class="delete">delete</span>
+	    		</li>
+	    		<li>
+	    			<span class="name">Plain Truth by </span>
+                    <span class="author">Jodi Picoult</span>
+	    			<span class="delete">delete</span>
+	    		</li>
+	    		<li>
+	    			<span class="name">Precious Bane by </span>
+                    <span class="author">Mary Webb</span>
+	    			<span class="delete">delete</span>
+	    		</li>
+	    	</ul>
+	    </div>
+	    <form id="add-book">
+<!--            <input type ="checkbox" id="hide"/>-->
+<!--            <label for="hide">Hide all books</label>-->
+	    	<input type="book" placeholder="Add a book title..." />
+            <input type="author" placeholder="Add the book author . . ." />
+	    	<button>Add</button>
+	    </form>
+        
+        <!-- <form id="add-author">
+            <input type ="checkbox" id="hide"/>
+	    	<input type="text" placeholder="Add the author of  book . . ." />
+	    	<button>Add</button>
+	    </form>-->
+
     </div>
         <script>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            // Lesson 10 = Event Bubbling
+            // delete books
+            const list =document.querySelector('#book-list ul');
+            list.addEventListener('click',function(e){
+                if(e.target.className =='delete') {
+                    const li = e.target.parentElement;
+                    list.removeChild(li);
+                }
+                
+            });
+            
+            //Lesson 11-Interact with Forms
+            //add books
+            const addBook = document.forms['add-book'];
+            const addAuthor = document.forms['add-book'];
+            
+            addBook.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const valueBook = addBook.querySelector('input[type="book"]').value  + " by ";
+                const valueAuthor = addAuthor.querySelector('input[type="author"]').value;
+                
+                
+               
+            /*const addAuthor = document.forms['add-author']; 
+            addAuthor.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const value = addAuthor.querySelector('input[type="text"]').value;    */
+                    
+            //Lesson 15: Styles Events
+            //hide books
+            /*const hideBox=document.querySelector('#hide');
+            hideBox.addEventListener('change', function(e){
+                if(hideBox.checked){
+                    list.style.display="none";
+                }
+                
+                else {
+                    list.style.display = "initial";
+                }
+            });*/
+        
+            
+
+           
+            
+            //Lesson 12-Create Elements
+            //create elements
+            const li = document.createElement('li'); //create li
+            const bookName = document.createElement('span'); //create span
+            const bookAuthor = document.createElement('span'); //create span
+            const deleteBtn = document.createElement('span'); //create another span
+                
+                
+            
+            // add content
+            deleteBtn.textContent='delete';
+            bookName.textContent= valueBook;
+            bookAuthor.textContent= valueAuthor;
+            
+            //Lesson 13: Styles and Classes
+            //add class
+            bookName.classList.add('name');
+            bookAuthor.classList.add('author');    
+            deleteBtn.classList.add('delete');
+     
+                
+            //append to DOM
+            li.appendChild(bookName);
+            li.appendChild(bookAuthor);   
+            li.appendChild(deleteBtn);
+            list.appendChild(li);
+                
+            });
+            
+            
+            
+            
+            
+            
+            //Lesson 9 = Events and Remove elements from DOM
+         
+            /*const listItems = document.querySelectorAll('#book-list ul li');
+
+            Array.from(listItems).forEach(function(item){
+            item.addEventListener('click', (e) => {
+
+            const li = e.target.parentElement;
+            console.log('child element to remove:', li);
+            console.log('parent element to remove child from:', li.parentElement);
+            li.parentNode.removeChild(li);
+
+            });
+                });
+
+                // prevent default behaviour
+
+                const link = document.querySelector('#page-banner a');
+
+                link.addEventListener('click', function(e){
+                e.preventDefault();
+                console.log('Navigation to', e.target.textContent, 'was prevented');
+                });*/
+            
+            
+            //Lesson 7 and 8= Traversing the DOM
+            /*const bookList = document.querySelector('#book-list');
+            
+            console.log('the node parent is: ', bookList.parentNode);
+            console.log('the element parent is: ', bookList.parentElement.parentElement); //adding the . goes two levels, first to the wrapper, then to book-list
+            
+            console.log(bookList.children);
+            
+            console.log('book-list next sibling is:', bookList.nextSibling);
+            
+            console.log('book-list next element sibling is:', bookList.nextElementSibling);
+            
+            console.log('book-list previous sibling is:', bookList.previousSibling);
+            
+            console.log('book-list previous element sibling is:', bookList.previousElementSibling);
+            
+            bookList.previousElementSibling.querySelector('p').innerHTML+='<br/> Hello';*/
+            
+            //Lesson 6 = 
+            /*const banner = document.querySelector('#page-banner');
+            console.log('#page-banner node type is:', banner.nodeType);
+            
+            console.log('#page-banner node name is:', banner.nodeName);
+            
+            console.log('#page-banner has child nodes:', banner.hasChildNodes());
+            
+            const clonedBanner = banner.cloneNode(true); //pass true so it captures entire node. If false was passed, it would just create the element, not everything the node contains.
+            console.log(clonedBanner);*/
+            
+            
             //Lesson 5
-            var books = document.querySelectorAll('#book-list li .name');
+           /* var books = document.querySelectorAll('#book-list li .name');
             
             
-            //Array.from(books).forEach(function(book){
-                //console.log(book.textContent);
-            //});
+            Array.from(books).forEach(function(book){
+                console.log(book.textContent);
+            });
             
             Array.from(books).forEach(function(book){
                 book.textContent += '(book title)';
             });
             
-            //const bookList = document.querySelector('#book-list');
-                //console.log(bookList.innerHTML);
-            
-            //const bookList = document.querySelector('#book-list');
-                //bookList.innerHTML = '<h2>Books and more book. . .</h2>';
+            const bookList = document.querySelector('#book-list');
+                console.log(bookList.innerHTML);
             
             const bookList = document.querySelector('#book-list');
                 bookList.innerHTML = '<h2>Books and more book. . .</h2>';
-                bookList.innerHTML += '<p>This is how you add HTML</p>';
+            
+            const bookList = document.querySelector('#book-list');
+                bookList.innerHTML = '<h2>Books and more book. . .</h2>';
+                bookList.innerHTML += '<p>This is how you add HTML</p>';*/
             //Lesson 4
-            //const wrap = document.querySelector('#wrapper');
-            //console.log(wrap);
+            /*const wrap = document.querySelector('#wrapper');
+            console.log(wrap);
             
-            //var allLight = document.querySelector('#book-list li:nth-child(2) .name');
-            //console.log(allLight);
+            var allLight = document.querySelector('#book-list li:nth-child(2) .name');
+            console.log(allLight);
             
-            //var books = document.querySelector('#book-list li .name');
-            //console.log(books);
+            var books = document.querySelector('#book-list li .name');
+            console.log(books);
             
-            //var books = document.querySelectorAll('#book-list li .name');
-            //console.log(books);
+            var books = document.querySelectorAll('#book-list li .name');
+            console.log(books);
             
-            //Array.from(books).forEach(function(book) {
-               //console.log(books); 
-            //})
-            
-            
-            //Lesson 3
-            //var titles = document.getElementsByClassName('title');
-            //console.log(Array.isArray(titles));
-            //console.log(Array.isArray(Array.from(titles)));
-            
-            //Array.from(titles).forEach(function(item) {
-                //console.log(item)
-            //})
+            Array.from(books).forEach(function(book) {
+               console.log(books); 
+            })*/
             
             
+            //Lesson 3-get ElementById, by Class or tag
+            
+            //Class
+            /*var titles = document.getElementsByClassName('title');
+            console.log(Array.isArray(titles));
+            console.log(Array.isArray(Array.from(titles)));
+            
+            Array.from(titles).forEach(function(item) {
+                console.log(item)
+            })
             
             
-        //const allLight = document.querySelector('#book-list li:nth-child(2).name');
-        //console.log(allLight);
+            
+            
+        const allLight = document.querySelector('#book-list li:nth-child(2).name');
+        console.log(allLight);*/
         
         
 
   
-        
+             //by Tag   
             /*const list = document.quereySelectory('#book-list ul');
             
             // delete books
@@ -247,6 +465,8 @@ h1, h2{
                 const value = addForm.querySelector('input[type="text"]').value;
                 
             });
+            
+            
              //create elements
             const li = document.createElement('li');
             const bookName = document.createElement('span');

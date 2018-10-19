@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>DOM | Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="DOM Manipulation for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        
+        <script>
+            function removeItem(box) {
+                document.getElementById("box").removeChild(box);
+            }
+        </script>
+
+    </head>
+    
+    <body>
+        <h1>removeChild</h1>
+        <p>Click on the boxes adn see what happens.</p>
+        
+        <div id="box">
+            <div onclick="removeItem(this);">
+                <div id="yellow" style="background: yellow; width: 200px; height: 30px;"></div></div>
+            <div onclick="removeItem(this);">
+            <div id="green" style="background: green; width: 200px; height: 30px;"></div>
+            </div>
+            
+        </div>
+       
+    </body>
+</html>
