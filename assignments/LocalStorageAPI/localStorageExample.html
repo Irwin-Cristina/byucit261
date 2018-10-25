@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Storage</title>
+<style>
+    
+        
+    input[type="text"] {
+        font-family: monospace;
+        width: 300px;
+        height: 50px;
+        margin: 20px;
+        font-size: 15px;
+        
+    }
+    
+    input[type="button"] {
+        font-family: monospace;
+        font-size: 20px;
+        width: 300px;
+        height: 50px;
+        margin: 20px;
+        background-color:  red;
+        color: white;
+    }
+    
+    h2 {
+        font-size: 20px;
+        margin: 20px;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+    
+    #load {
+        font-family: monospace;
+    }
+    
+    #savedList {
+        font-size: 18px;
+        font-family: monospace;
+        margin: 50px; 
+    }   
+    
+</style>
+ 
+</head>
+<body>
+    <h1>Add your task to a list. The tasked added will be stored in localStorage.</h1>
+ <input type="text" id="box" value="Type task"/><br/>
+    <p>Hit save to save your list item to localStorage.</p>
+ <input type="button" id="save" value="Save" onclick="save();"/><br/>
+    <p>Hit load to load your your saved task from localStorage.</p>
+ <input type="button" id="load" value="Load" onclick="load();"/><br/>
+  <h2>Saved item:</h2><div id="savedList"></div>
+    
+    
+    <script>
+        function save() {
+            var newItem = document.getElementById("box").value;
+            localStorage.box = newItem;
+            }
+        function load() {
+            var savedDiv = document.getElementById("savedList");
+            savedDiv.innerHTML = localStorage.box;
+        }
+        
+//        var tasks = [];
+//
+//        
+//        function Task(name) {
+//            this.name = name;
+//        }
+//        
+        // Add New Task
+//        function addNewTaskWithName(name) {
+//            var t = new Task(name);
+//            tasks.push(t);
+//            saveTasks();
+//        }
+        //Get Task
+//        function getTaskAtIndex(index) {
+//            return tasks[index];
+//        }
+        
+        //save data to Local Storage
+//        function saveTasks() {
+//           var str = JSON.stringify(tasks);
+//            localStorage.setItem("tasks", str);
+//        }
+//        
+        //Get data from local storage
+//        function getTasks() {
+//            var str = localStorage.getItem("tasks");
+//            tasks = JSON.parse(str);
+//            if (!tasks) {
+//                tasks = [];
+//            }
+//        }
+//        
+//        getTasks();
+//        listTasks();
+        
+        
+        //List Tasks
+//        function listTasks() {
+//            var html = " ";
+//            for (var i in tasks) {
+//                //console.log(todos[i].name);
+//                var task = tasks[i];
+//                var name = tasks.name;
+//                html += "<li>" + name + "</li>";
+//            }
+            //$("#list-todos").html(html);
+//       }
+//        
+//        
+//        $("#add-todo-form").submit(function(event){
+//            event.preventDefault(); //prevents default behavior
+//            
+//            var name = $("#todo-name").val();
+//            //validate
+//            addNewTodoWithName(name);
+//            listTodos();
+//        });
+//        
+        
+    </script>
+    
+</body>
+</html>

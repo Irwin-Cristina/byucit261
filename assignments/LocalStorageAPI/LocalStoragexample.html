@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>LocalStorage | Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="Local Storage for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+        
+        #list-todos li span {
+            display: block;
+            float: right;
+            color: red;
+        }
+        
+        #add-todo-form p{
+            margin: 0;
+            height: 40px;
+            line-height: 40px;
+            
+        }
+        #list-todos li {
+            border-bottom: 2px solid #000;
+            height: 40px;
+            line-height: 40px;
+            
+        }
+        p.input {
+            
+        }
+        
+        #add-todo-form input[type='submit']{
+            width: 50px;
+            border: 1px solid red;
+            padding: 6px;
+            float: right;
+            }
+        
+        #add-todo-form input[type='text'] {
+            width: calc(100% -66px);
+        }
+        ul, li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+                
+            
+            
+            
+        }
+    </style> 
+        
+    </head>
+    
+    <body>
+        <header>
+        <h1>Local Storage</h1>
+        </header>
+        <h2>To do list</h2>
+        <form id="add-todo-form">
+            <p><input id="todo-name" type ="text"><input type ="submit"></p>
+        
+        </form>
+        <ul id ="list-todos">
+        
+        </ul>
+        
+        
+       
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        var todos = [];
+        
+        function Todo(name) {
+            this.name = name;
+            this.completed = false;
+        }
+        
+        // Add New Todo
+        function addNewTodoWithName(name) {
+            var t = new Todo(name);
+            todos.push(t);
+            saveTodos();
+        }
+        
+        //Remove Todo
+        function removeTodoAtIndex(index) {
+            todos.splice(index, 1);
+            saveTodos();
+        }
+        
+        //Get ToDo
+        function getTodoAtIndex(index) {
+            return todos[index];
+        }
+        
+        
+        //save data to Local Storage
+        function saveTodos() {
+           var str = JSON.stringify(todos);
+            localStorage.setItem("todos", str);
+        }
+        
+        //Get data from local storage
+        function getTodos() {
+            var str = localStorage.getItem("todos");
+            todos = JSON.parse(str);
+            if (!todos) {
+                todos = [];
+            }
+        }
+        
+       getTodos();
+        listTodos();
+        
+        //List Todos
+        function listTodos() {
+            var html = " ";
+            for (var i in todos) {
+                //console.log(todos[i].name);
+                var todo = todos[i];
+                var name = todo.name;
+                var completed = todo.completed;
+                html += "<li>"+name+"<span> "+completed+"</span></li>";
+            }
+            $("#list-todos").html(html);
+       }
+        
+        
+           // addNewTodoWithName("Eat Breakfast");
+           // addNewTodoWithName("Brush Teeth");
+            //addNewTodoWithName("Tie Shoes");
+            //addNewTodoWithName("Get Dressed");
+            //addNewTodoWithName("Walk to School");
+        
+            //listTodos();
+            //console.log("*******");
+            //removeTodoAtIndex(1);
+            //listTodos();
+   
+        
+        $("#add-todo-form").submit(function(event){
+            event.preventDefault(); //prevents default behavior
+            
+            var name = $("#todo-name").val();
+            //validate
+            addNewTodoWithName(name);
+            listTodos();
+        });
+        
+        
+        
+        
+        
+        
+        //var obj = {name: "Simon", age: 11};
+        //JSOM
+        //var obj = {"name": "Simon", "age": 11}
+    </script>
+    </body>
+        </html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <title>Local Storage</title>
+</head>
+ 
+<body>
+    <h1>Books in Library</h1>
+    <p><italics>of Cristina Irwin</italics></p>
+    <h4>Book information</h4>
+     <form id ="bookform">
+        <fieldset id="bookforminput">
+            <label for="title">Book Title: <input type="text" name="bookTitle" id="title"></label>
+            <label for="author">Author: <input type="text" name="author" id="author"></label>
+            <label for="copy">Copyright: <input type="text" name="copywrite" id="copy"></label>
+            <label for="pages">Amount of Pages: <input type="text" name="pages" id="pages"></label>
+         </fieldset>
+         <fieldset id="bookform_submit">
+             <input type="button" name="button" id="action" value="add" onClick="addBook()">
+         </fieldset>
+    </form>
+    <h4>Book List</h4>
+    <div id="book_list_div"><table id="book_list"></table></div>
+    
+<!--
+    <button type="button" onclick="arrayLength()">How Many Books are in the series</button>
+        <div id="outputDiv3"></div>
+-->
+    
+  <script>
+    function Book(title, author, copy, pages) {
+		                this.title = title;
+		                this.author = author;
+		                this.copy = copy;
+		                this.pages = pages;
+		            }
+
+		            function addBook() {
+		                var titleElement = document.getElementById('title');
+		                var authorElement = document.getElementById('author');
+		                var copyElement = document.getElementById('copy');
+		                var pagesElement = document.getElementById('pages');
+		                var title = titleElement.value;
+		                var author = authorElement.value;
+		                var copy = copyElement.value;
+		                var pages = pagesElement.value;
+		                var newBook = new Book(title, author, copy, pages);
+		                var bookList = JSON.parse(localStorage.getItem("bookList"));
+		                if(bookList === null) {
+		                    bookList = Array();
+		                }
+		                bookList.push(newBook);
+		                localStorage.setItem("bookList", JSON.stringify(bookList));
+		                titleElement.value = "";
+		                authorElement.value = "";
+		                copyElement.value = "";
+		                pagesElement.value = "";
+		                updateTable();
+		            }
+            
+		            function deleteBook(index) {
+		                var bookList = JSON.parse(localStorage.getItem("bookList"));
+		                bookList.splice(index,1);
+		                localStorage.setItem("bookList", JSON.stringify(bookList));
+		                updateTable();
+		            }
+		            
+		            function updateTable() {
+		                var table = document.getElementById('book_list');
+				var div = document.getElementById('book_list_div');
+		                var bookList = JSON.parse(localStorage.getItem("bookList"));
+		                var newTable = document.createElement('table');
+		                newTable.id = 'book_list';
+		                var newTableHead = document.createElement('thead');
+		                var newTableHeadRow = document.createElement('tr');
+		                var newTableHeadTitle = document.createElement('th');
+		                newTableHeadTitle.appendChild(document.createTextNode('Title'));
+		                var newTableHeadAuthor = document.createElement('th');
+		                newTableHeadAuthor.appendChild(document.createTextNode('Author'));
+		                var newTableHeadCopywrite = document.createElement('th');
+		                newTableHeadCopywrite.appendChild(document.createTextNode('Copyright'));
+		                var newTableHeadPages = document.createElement('th');
+		                newTableHeadPages.appendChild(document.createTextNode('Pages'));
+		                var newTableHeadAction = document.createElement('th');
+		                newTableHeadAction.appendChild(document.createTextNode('Action'));
+		                
+		                newTableHeadRow.appendChild(newTableHeadTitle);
+		                newTableHeadRow.appendChild(newTableHeadAuthor);
+		                newTableHeadRow.appendChild(newTableHeadCopywrite);
+		                newTableHeadRow.appendChild(newTableHeadPages);
+		                newTableHeadRow.appendChild(newTableHeadAction);
+		                
+		                newTableHead.appendChild(newTableHeadRow);
+		                var newTableBody = document.createElement('tbody');
+		                
+		                if(bookList !== null) {
+		                    var count = 0;
+		                    bookList.forEach(function(rowData) {
+		                        var row = document.createElement('tr');
+		
+		                        var titleCell = document.createElement('td');
+		                        titleCell.appendChild(document.createTextNode(rowData.title));
+		                        row.appendChild(titleCell);
+		                        var authorCell = document.createElement('td');
+		                        authorCell.appendChild(document.createTextNode(rowData.author));
+		                        row.appendChild(authorCell);
+		                        var copywriteCell = document.createElement('td');
+		                        copywriteCell.appendChild(document.createTextNode(rowData.copy));
+		                        row.appendChild(copywriteCell);
+		                        var pagesCell = document.createElement('td');
+		                        pagesCell.appendChild(document.createTextNode(rowData.pages));
+		                        row.appendChild(pagesCell);
+		                        var actionCell = document.createElement('td');
+		                        actionCell.innerHTML = "<input type=\"button\" name=\"button\" value=\"Delete\" onClick=\"deleteBook(" + count + ")\">";
+		                        row.appendChild(actionCell);
+		                        newTableBody.appendChild(row);
+		                        count++;
+		                    });
+		                }
+                
+		                newTable.appendChild(newTableHead);
+		                newTable.appendChild(newTableBody);
+		                div.replaceChild(newTable, table);
+		            }
+            
+		            updateTable();
+  </script>
+</body>
+ 
+</html>

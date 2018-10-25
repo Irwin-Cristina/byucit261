@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Personal greeting</title>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+      body {
+        margin: 0 auto;
+        max-width: 1024px;
+      }
+      main {
+        padding: 20px;
+      }
+      header, footer {
+        background: #925875;
+        padding: 20px;
+        border: 1px solid black;
+      }
+      header {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-transform: uppercase;
+      }
+      form {
+        font-size: 0.8rem;
+      }
+      .personal-greeting {
+        font-weight: bold;
+      }
+        
+      input[type="submit"] {
+
+        font-size: 10px;
+        margin: 20px;
+        background-color: #bb7c67;
+        color: white;
+      }
+        
+        span {
+            font-family: monospace;
+            font-size: 14px;
+            color: white;
+            background-color: #c09880;
+            
+        }
+        
+      footer {
+        font-size: .5em;
+        color: white;
+        }
+    </style>
+    
+  </head>
+  <body>
+    <header>
+      <h1>Our website</h1>
+
+      <form>
+        <div class="remember">
+          <label for="entername">Enter your name:</label>
+          <input id="entername" type="text" required>
+          <input id="submitname" type="submit" value="Submit">
+        </div>
+        <div class="forget">
+          <label for="forgetname">Want me to forget you?</label>
+          <input id="forgetname" type="reset" value="Forget">
+        </div>
+      </form>
+    </header>
+
+    <main>
+
+      <p class="personal-greeting">Welcome to our website.</p>
+
+      <p>This is to test <span>localStorage.</span> It gives a practical example of how to use <span>localStorage.</span></p>
+
+      <p><span>LocalStorage</span> can be used instead of cookies.</p>
+
+    </main>
+
+    <footer>
+      <p>Copyright Bella Design</p>
+    </footer>
+      
+  <script>
+        // create needed constants
+        const rememberDiv = document.querySelector('.remember');
+        const forgetDiv = document.querySelector('.forget');
+        const form = document.querySelector('form');
+        const nameInput = document.querySelector('#entername');
+        const submitBtn = document.querySelector('#submitname');
+        const forgetBtn = document.querySelector('#forgetname');
+
+        const h1 = document.querySelector('h1');
+        const personalGreeting = document.querySelector('.personal-greeting');
+      
+        // Stop the form from submitting when a button is pressed
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            });
+      
+        
+        // run function when the 'Say hello' button is clicked
+        submitBtn.addEventListener('click', function() {
+        // store the entered name in web storage
+        localStorage.setItem('visitorName', nameInput.value);
+        // run nameDisplayCheck() to sort out displaying the
+        // personalized greetings and updating the form display
+        nameDisplayCheck();
+        });
+        
+        // run function when the 'Forget' button is clicked
+        forgetBtn.addEventListener('click', function() {
+        // Remove the stored name from web storage
+        localStorage.removeItem('visitorName');
+        // run nameDisplayCheck() to sort out displaying the
+        // generic greeting again and updating the form display
+        nameDisplayCheck();
+        });
+        
+        // define the nameDisplayCheck() function
+        function nameDisplayCheck() {
+        // check whether the 'name' data item is stored in web Storage
+        if(localStorage.getItem('visitorName')) {
+        // If it is, display personalized greeting
+        let name = localStorage.getItem('visitorName');
+        h1.textContent = 'Welcome, ' + name;
+        personalGreeting.textContent = 'Welcome to our website, ' + name + '! We hope you have fun while you are here.';
+        // hide the 'remember' part of the form and show the 'forget' part
+        forgetDiv.style.display = 'block';
+        rememberDiv.style.display = 'none';
+        } else {
+        // if not, display generic greeting
+        h1.textContent = 'Welcome to a test website ';
+        personalGreeting.textContent = 'Welcome to a test website. We hope you have fun while you are here.';
+        // hide the 'forget' part of the form and show the 'remember' part
+        forgetDiv.style.display = 'none';
+        rememberDiv.style.display = 'block';
+        }
+        }
+        
+        document.body.onload = nameDisplayCheck;
+
+        
+      </script>    
+  </body>
+</html>

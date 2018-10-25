@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <title>Local Storage</title>
+</head>
+ 
+<body>
+    <h1>Harry Potter Books</h1>
+    <p><italics>by J K Rowling</italics></p>
+    
+<!--
+    <button type="button" onclick="arrayLength()">How Many Books are in the series</button>
+        <div id="outputDiv3"></div>
+-->
+    
+  <script>
+    // our array
+    var books = ["Harry Potter and the Sorcers Stone", "Harry Potter and the Chamber of Secrets", "Harry Potter and the Prisoner of Azkaban", "Harry Potter and the Goblet of Fire", "Harry Potter and the Order of the Phoenix", "Harry Potter and the Half-Blood Prince", "Harry Potter and the Deathly Hallows"];
+ 
+    // storing our array as a string
+    localStorage.setItem("jKrowling", JSON.stringify(books));
+  
+ 
+    // retrieving our data and converting it back into an array
+    var retrievedData = localStorage.getItem("jKrowling");
+    var books2 = JSON.parse(retrievedData);
+ 
+    //making sure it still is an array
+    document.write(books.length + " books in the series");
+    document.write("<br>");
+    document.write("<strong>The books names are </strong>");
+    document.write("<br>");
+    document.write(books[0] + ", ", books[1] + ", ", books[2] + ", ", books[3] + ", ", books[4] + ", ", books[5] + ", and ", books[6] + ".");
+  </script>
+</body>
+ 
+</html>
