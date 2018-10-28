@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Nunito+Sans');
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    min-width: 1000px;
+    margin: 50px;
+	padding: 0px;  
+}
+
+h1 {
+    font-family: 'Lobster', cursive; 
+    font-size: 45px;
+}
+
+h2 {
+    color: darkcyan;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 2em;
+	color: #e55052;
+	text-align: left;
+	line-height: 60px;
+    padding: 20px 100px 20px 100px;
+    
+}
+
+.italics{
+    font-family: 'Lobster', cursive;
+	font-style: italic;
+}
+
+#colora {
+    color:aquamarine;
+    font-size: 2em;
+}
+
+#colorb {
+    color: cornflowerblue;
+    font-size: 2em;
+}
+
+#colorc {
+    color:olive;
+    font-size: 2em;
+}
+
+#colord {
+    color: forestgreen;
+    font-size: 2em;
+}
+
+#colore {
+    color: purple;
+    font-size: 2em;
+}
+
+#colorf {
+    color: mediumpurple;
+    font-size: 2em;
+}

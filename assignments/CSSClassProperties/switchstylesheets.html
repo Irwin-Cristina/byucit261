@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>CSS Properties Manipulated with JavaScript | Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="JSON for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        <link id="pagestyle" rel="stylesheet" type="text/css" href="/assignments/CSSClassProperties/default.css">
+        <script type="text/javascript">
+        function changeStyleSheet(sheet){
+            document.getElementById('pagestyle').setAttribute('href', sheet);
+        }
+        
+        </script>
+    </head>
+    
+<body>
+    <h1>This is a test Website</h1>
+    
+    
+    <h2>Javascript Change Stylesheet without page reload</h2>
+     
+    <p>"Though we are <span class= italics id="colora">incomplete,</span> God loves us <span class= italics id="colorb">completely.</span> Though we are <span class= italics id="colorc">imperfect,</span> He loves us <span class= italics id="colord">perfectly,</span> though we may feel lost and <span class= italics id="colore">without compass,</span> God's love encompasses us <span class= italics id="colorf">completely.</span>"</p>
+    
+    <button onclick="changeStyleSheet('One.css')">One</button>
+    <button onclick="changeStyleSheet('Two.css')">Two</button>
+    <button onclick="changeStyleSheet('default.css')">Default</button>
+        
+    
+    </body>
+        </html>

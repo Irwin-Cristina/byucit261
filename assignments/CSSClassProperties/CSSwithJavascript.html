@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>CSS Properties Manipulated with JavaScript | Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="JSON for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        
+        <style>
+            #p1 {
+                width: 186px;
+                height: 100px;
+                border:solid blue 2px;
+                color: black;
+                margin-bottom: 20px;
+                padding-top: 40px;
+                padding-left: 10px;
+                background-color: white;
+                
+            }
+            
+            #top {
+                margin: 20px;
+                width: 200px;
+                height: 300px;
+                background-color: crimson;
+            }
+            
+            button {
+                padding: 10px;
+                margin: 25px;
+            }
+            
+            #top #p1 {
+                font-size: 20px;
+                color: green;
+            }
+            
+        </style>
+    </head>
+    
+<body>        
+    <header>
+        <h1>CSS</h1>
+    </header>
+    <div id="top">
+        <p id="p1" onclick="alterStyle(this);">Click here to change the background color.</p>
+     </div>
+     
+    <div id="bottom">
+        <button onclick="resetStyle('p1')">Reset background color</button>
+     </div> 
+    
+    <p id="p2">This text can change color by clicking the button.</p>
+    
+    <button type="button" onclick="myButtonFunction()">Click me to change text color</button>
+    
+    <button type="button" onclick="resetText()">Reset text color</button>
+        
+       
+        
+      
+        <script>
+            function alterStyle(elem) {
+                elem.style.background = 'green';
+                elem.style.color = 'white';
+            }
+           
+            function resetStyle(elemId) {
+                elem = document.getElementById(elemId);
+                elem.style.background = 'white';
+                elem.style.color = 'green';
+            }
+            
+            function myButtonFunction() {
+             document.getElementById("p2").style.color="red";
+            }
+            
+            function resetText() {
+                document.getElementById("p2").style.color="black";
+            }
+    
+        
+        </script>
+    
+    </body>
+        </html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>CSS Properties Manipulated with JavaScript | Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="JSON for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        
+        <style>
+            body {
+                font-size: 80%;
+                font-family: "Courier New", Courier, monospace;
+                letter-spacing: 0.15em;
+                background-color: #efefef;
+            }
+            
+            div {
+                margin: 20px 20px 20px 20px;
+                padding: 20px;
+                background-color: lightgrey;
+            }
+            
+            h1 {
+                text-align: left;
+                margin-left: 50px;
+                font-size: 36px;
+            }
+            
+            h2 {
+                font-size: 24px;
+                text-align: left;
+                width: 600px;
+                margin: 20px auto 20px auto;
+            
+            }
+            
+            p {
+                text-align: left;
+                width: 600px;
+                margin: 20px auto 20px auto;
+                font-weight: normal;
+            }
+            
+            figure {
+                width: 600px;
+                margin: 20px auto 20px auto;
+            }
+            
+            button {
+                padding: 20px;
+                margin: 20px auto;
+                background-color: aquamarine;
+                text-align: right;
+                box-shadow: 5px 5px 5px #777777;
+            }
+            
+            img {
+                width: 300px;
+            }
+            
+            #q1 {
+                color: red;
+            }
+            
+            #q2 {
+                color: blue;
+            }
+            
+            #q3 {
+                color: orange;
+                 
+            }
+            
+            #q4 {
+                color: purple;
+            }
+            
+            #q5 {
+                color: deeppink;
+            }
+            
+            #q6 {
+                color: cadetblue;
+            }
+            
+            #q7 {
+                color: darkred;
+            }
+            
+             #q8 {
+                color: darkblue;
+            }
+            
+        </style>
+    </head>
+    
+<body>        
+        <h1>CSS Test page</h1>
+    
+    
+    <div id="q1">
+        <figure>
+            <img src="images/boatbluesky.jpg" alt="boat on shore" title="Image of boat on shore">
+        </figure>
+        <h2 class="title">Quote One</h2>
+        <p id="p1">"Consider failure as a tutor, not as a tragedy"</p>
+        <button type="button" onclick="changeTextq1Function()">Click me to change text color</button>
+    </div>
+    
+    <div id="q2">
+        <figure>
+            <img src="images/paths.jpg" alt="path"title="Image two paths">
+        </figure>
+        <h2 class="title">Quote Two</h2>
+        <p>"The choices we make determine our destiny"</p>
+        <button type="button" onclick="changeSizeq2Function()">Click me to change text size</button>
+    </div>
+    
+    <div id="q3">
+        <figure>
+            <img src="images/books.jpg" alt="boat on shore" title="Image of boat on shore">
+        </figure>
+        <h2 class="title">Quote Three</h2>
+        <p>"Education is the differnce between wishing you could help other peole and being able to help them."</p>
+        <button type="button" onclick="changeMarginq3Function()">Click me to change margin</button>
+    </div>
+    
+    <div id="q4">
+        <figure>
+            <img src="images/irishisland.jpg" alt="island with a hole"title="Island with a hole">
+        </figure>
+        <h2 class="title">Quote Four</h2>
+        <p>"God gives us difficulties to bring out the best in us."</p>
+        <button type="button" onclick="changebackgroundColorq4Function()">Click me to change background color</button>
+    </div>
+    
+    <div id="q5">
+        <figure>
+            <img src="images/family.jpg" alt="family"title="Image of a mom and two kids">
+        </figure>
+        <h2 class="title">Quote Five</h2>
+        <p>"What is most important almost alway involves the people around us."</p>
+        
+        <button type="button" onclick="changefontq5Function()">Click me to change font</button>
+    </div>
+    
+    <div id="q6">
+        <figure>
+            <img src="images/redrock.jpg" alt="redrock"title="Image red rock">
+        </figure>
+        <h2 class="title">Quote Six</h2>
+        <p>"So much in life depends on our attitude."</p>
+         <button type="button" onclick="changeborderq6Function()">Click me to add a border</button>
+    </div>
+    
+    
+    
+    <div id="q7">
+        <figure>
+            <img id="image7" src="images/talltrees.jpg" alt="tall s trees"title="Image tall trees">
+        </figure>
+        <h2 id="title7">Quote Seven</h2>
+        <p id="center">"Don't let who you used to be hold you back from who you can beome."</p>
+        <button type="button" onclick="changetextalignq7Function()">Click me to center text and image</button>
+    </div>
+    
+    <div id="q8">
+        <figure>
+            <img id="picture8" src="images/mountains.jpg" alt="mountain"title="Image of mountain">
+        </figure>
+        <h2 class="title">Quote Eight</h2>
+        <p>"Though we are <span class= italics id="colora">incomplete,</span> God loves us <span class= italics id="colorb">completely.</span> Though we are <span class= italics id="colorc">imperfect,</span> He loves us <span class= italics id="colord">perfectly,</span> though we may feel lost and <span class= italics id="colore">without compass,</span> God's love encompasses us <span class= italics id="colorf">completely.</span>"</p>
+        
+        <button type="button" onclick="imageFunction()">CLick me to Resize image</button>
+    </div>
+    
+
+      
+        <script>
+           function changeTextq1Function() {
+             document.getElementById("q1").style.color="blue";
+            document.getElementById("p1").style.backgroundColor="yellow";
+            }
+        
+            function changeSizeq2Function() {
+             document.getElementById("q2").style.fontSize= "36px";
+            }
+            
+            function changeMarginq3Function() {
+             document.getElementById("q3").style.margin= "50px";
+            }
+            
+            function changebackgroundColorq4Function() { document.getElementById("q4").style.backgroundColor= "aqua";
+            }
+            
+            function changefontq5Function() { document.getElementById("q5").style.fontFamily= "helvetica";
+            }
+            
+            function changeborderq6Function() { document.getElementById("q6").style.border= "solid lightblue 10px";
+            }
+            
+            function changetextalignq7Function() { document.getElementById("center").style.textAlign= "center";
+            document.getElementById("title7").style.textAlign= "center";
+            document.getElementById("q7").style.textAlign= "center";
+
+            }
+            
+            function imageFunction() { document.getElementById("picture8").style.width= "50px";
+            }
+        </script>
+    
+    </body>
+        </html>
