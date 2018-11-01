@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title> JavaScript Events| Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="Events for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        
+        <style>
+            
+            div {
+                background-color: red;
+                height: 100px;
+                width: 25%;
+                float: left;
+            }
+           
+            
+        </style>
+    </head>
+    
+    <body>        
+        <h1>Boxes</h1>
+        <p>Click anywhere on red box. New boxes appear on every click.</p>
+        
+    <script>
+        for(var i = 1; i <= 16; i++) {
+            var myDiv = document.createElement('div');
+            document.body.appendChild(myDiv);
+        }
+        
+        
+        
+        
+        
+        function random(number) {
+            return Math.floor(Math.random()*number);
+        }
+        
+        
+
+        
+        function bgChange() {
+            var randomColor = 'rgb(' + random(255) + ', ' + random(255) + ' , '+ random(255) + ')';
+            return randomColor;
+        }
+
+        
+        
+        var divs = document.querySelectorAll('div');
+        
+        for (var i = 0; i < divs.length; i++) {
+            divs[i].onclick = function(e) {
+                e.target.style.backgroundColor = bgChange();
+            }
+        }
+            
+        
+       
+           
+            
+            
+    </script>
+    
+    </body>
+        </html>

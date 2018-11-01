@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>CSS Transitions and Animations with JavaScript | Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="JavaScript Objects for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        <style>
+            .box {
+                margin: 30px;
+                height: 50px;
+                width: 50px;
+                background-color: crimson;
+                }
+            
+            .box.horizTranslate {
+                -webkit-transition: 3s;
+                -moz-transition: 3s;
+                -ms-transition: 3s;
+                -o-transition: 3s;
+                transition: 3s;
+                margin-left: 50% !important;
+            }
+            
+            .zoomPic {
+                margin: 30px;
+                width: 300px;
+                height: 180px;
+                background-color: purple;
+                background-image: url(snowmountain.jpg);
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-size: 300px 180px;
+                -webkit-transition: all 2.5s ease-in-out;
+                -moz-transition: all 2.5s ease-in-out;
+                -ms-transition: all 2.5s ease-in-out;
+                -o-transition: all 2.5s ease-in-out;
+            }
+            
+            .zoomPic.zoom {
+                background-size: 1200px 720px !important;
+            }
+            
+            .square {
+                background-color: aqua;
+                height: 200px;
+                width: 200px;
+                transition: opacity 2s;
+                margin: 20px;
+            }
+            
+            p#box1 {
+               font-size: 4em;
+	           color: blue;
+	           width: 400px;
+	           height: 200px;
+            }
+            
+            div#box2{
+                background-color: darkmagenta;
+                width: 400px;
+                height: 200px;
+                margin: 50px;
+            }
+            
+            div#box3{
+                background-color: darkcyan;
+                width: 400px;
+                height: 200px;
+                position: absolute;
+                left:-400px;
+               
+                margin: 50px 50px 0px 50px;
+            }
+            
+            #box3 p{
+                font-size: 3em;
+                color:white;
+                padding: 20px;
+            }
+            
+            #container {
+                width: 500px;
+                height: 300px;
+                background-color: deeppink;
+            }
+            
+            .buttoncontainer {
+                margin: 10px;
+            }
+
+            button {
+                background-color: darkslategray;
+                color: white;
+                padding: 5px;
+                box-shadow: 5px 5px 5px #777777;
+            }
+        </style>
+        
+    </head>
+    
+    <body>
+        <h3>Pure JavaScript Transitions</h3>
+            <div class='box'></div>
+            <button class='toggleButton'value='play'>Play</button>
+        
+            <div class="zoomPic"></div>
+            <button class = 'zoom'>Zoom</button>
+            <button class = 'pause'>Pause</button>
+            <button class = 'zoomout'>Zoom Out</button>
+
+                
+        <div id="square1"class ="square">
+        </div>
+        <button type ="button" onclick="fadeOut()">Fade Out</button>
+        <button type ="button" onclick="fadeIn()">Fade In</button>
+
+        
+        <p id="box1">Watch this text change color.</p>
+<!--        <div id="box1">Content in box 1 ...</div>-->
+        <button class="buttoncontainer" onclick="changeTextColor('box1','red')">Red</button>
+        <button class="buttoncontainer" onclick="changeTextColor('box1','#0C0')">Green</button>
+        <button class="buttoncontainer" onclick="changeTextColor('box1','blue')">Origninal</button>
+        <button class="buttoncontainer" onclick="fadeOutColor('box1')">Fade Out</button>
+        <button class="buttoncontainer" onclick="fadeInColor('box1')">Fade In</button>
+        
+       <div id="box2"></div>
+        <button class="buttoncontainer" onclick="slideClosed('box2')">Slide Closed</button>
+        <button class="buttoncontainer" onclick="slideOpen('box2')">Slide Open</button>
+        
+        
+        <br>
+        <div id="container">
+       <div id="box3">
+            <p>Hello :) </p></div>
+        </div>
+        <button class="buttoncontainer" onclick="slideIn('box3')">Slide Out</button>
+        <button class="buttoncontainer" onclick="slideOut('box3')">Slide In</button> 
+        
+        
+    <script>
+        var boxOne = document.getElementsByClassName('box')[0];
+        
+        document.getElementsByClassName('toggleButton')[0].onclick = function() {
+            if(this.innerHTML==='Play')
+            {
+            this.innerHTML = 'Pause';
+            boxOne.classList.add('horizTranslate');
+            } else {
+              this.innerHTML = 'Play';
+              var computedStyle = window.getComputedStyle(boxOne), 
+                  marginLeft = computedStyle.getPropertyValue('margin-left');
+                boxOne.style.marginLeft = marginLeft;
+                boxOne.classList.remove('horizTranslate');
+            }
+        }
+        
+        var zoomOne = document.getElementsByClassName('zoomPic')[0], zoomOneBGsize = window.getComputedStyle(zoomOne).getPropertyValue('background-size');
+        
+        document.getElementsByClassName('zoom')[0].onclick = function() {
+            if(!zoomOne.classList.contains('zoom'))
+            {
+            zoomOne.classList.add('zoom');
+            }
+        }
+        document.getElementsByClassName('pause')[0].onclick = function() {
+            var computedStyle = window.getComputedStyle(zoomOne), backgroundSize = computedStyle.getPropertyValue('background-size');
+            zoomOne.style.backgroundSize = backgroundSize;
+            zoomOne.classList.remove('zoom');
+        }
+        document.getElementsByClassName('zoomout')[0].onclick = function() {
+            zoomOne.classList.remove('zoom');
+            zoomOne.style.backgroundSize = zoomOneBGsize;
+        }
+        
+        function fadeOut() {
+            const square = document.getElementById('square1');
+            square.style.opacity = '0';
+        }
+        
+        function fadeIn() {
+            const square = document.getElementById('square1');
+            square.style.opacity = '1';
+        }
+        
+        function changeTextColor(el,clr){
+	       var elem = document.getElementById(el);
+	       elem.style.transition = "color 1.0s linear 0s";
+	       elem.style.color = clr;
+        }
+        
+        function fadeOutColor(el){
+	       var elem = document.getElementById(el);
+	       elem.style.transition = "opacity 1.0s linear 0s";
+	       elem.style.opacity = 0;
+        }
+        
+        function fadeInColor(el){
+	       var elem = document.getElementById(el);
+	       elem.style.transition = "opacity 1.0s linear 0s";
+	       elem.style.opacity = 1;
+        }
+        
+        function slideOpen(el){
+	       var elem = document.getElementById(el);
+	       elem.style.transition = "height 1.0s linear 0s";
+	       elem.style.height = "200px";
+        }
+        
+        function slideClosed(el){
+	       var elem = document.getElementById(el);
+	       elem.style.transition = "height 1.0s linear 0s";
+	       elem.style.height = "0px";
+        }
+        
+        function slideIn(el){
+	       var elem = document.getElementById(el);
+	       elem.style.transition = "left 1.0s ease-in 0s";
+	       elem.style.left = "0px";
+        }
+        
+        function slideOut(el){
+	       var elem = document.getElementById(el);
+	       elem.style.transition = "left 1.0s ease-out 0s";
+	       elem.style.left = "-400px";
+        }
+        
+    </script>
+    </body>
+        </html>

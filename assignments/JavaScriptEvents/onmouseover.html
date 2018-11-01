@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title> JavaScript Events| Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="Events for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        
+        <style>
+            button {
+                margin: 10px;
+            }
+            #box1 {
+                font-size: 5em;
+                margin: 2px;
+            }
+           
+            #mouse {
+                height: 30px;
+            }
+            
+        </style>
+    </head>
+    
+<body>
+    
+    <h1>JavaScript Events</h1>
+    <p>all text will inherit from the body style until the change color button is clicked. Then the larger text will have its own style element.</p>
+    <button id="mouse">Mouse over this to Change color</button>
+    
+    <p id="box1">Watch this text change color.</p>
+    <button class="buttoncontainer" onclick="changeTextColor('box1','red')">Change color</button>
+    
+
+    
+    
+    
+
+      
+    <script>
+        var btn = document.querySelector('button');
+        btn.onmouseover = bgChange;
+        
+        function random(number) {
+            return Math.floor(Math.random()*(number+1));
+        }
+        
+        function bgChange() {
+            var randomdColor = 'rgb(' + random(255) + ', ' + random(255) + ' , '+ random(255) + ')';
+            document.body.style.color = randomdColor;
+        }
+        
+        
+       
+        
+        function changeTextColor(el, clr) {
+            var elem = document.getElementById(el);
+            var clr = 'rgb(' + random(255) + ', ' + random(255) + ' , '+ random(255) + ')';
+            var clr2 = 'rgb(' + random(255) + ', ' + random(255) + ' , '+ random(255) + ')';
+            elem.style.color=clr;
+            elem.style.backgroundColor=clr2;
+        }
+        
+    </script>
+    
+    </body>
+        </html>
