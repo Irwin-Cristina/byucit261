@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title> CSS Animation| Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="CSS Animation for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        
+        <style>
+            #quote1 {
+                font-size: 1.5em;
+                margin-top: 50px;
+                margin-bottom: 0;
+                animation-duration: 4s;
+                animation-name: quote1slidein;
+            }
+            
+            @keyframes quote1slidein {
+                from {
+                    margin-left: 100%;
+                    width: 300%
+                }
+                
+                to {
+                    margin-left: 0%;
+                    width: 100%;
+                    
+                }
+            }
+            
+            
+            .span1 {
+                font-style: italic;
+                margin-left: 10px;
+                margin-right: 10px;
+                color: crimson;
+                animation-name: zoomin;
+            }
+            
+            @keyframes zoomin {
+                from {
+                    opacity: 0;
+                    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+                    transform: scale3d(0.3, 0.3, 0.3);
+                }
+                
+                50% {
+                    opacity: 1;
+                }
+            }
+            
+            #author1 {
+                margin-top: 0;
+                font-size: 3em;
+                color: darkmagenta;
+                animation-duration: 4s;
+                -webkit-animation-name: author1slidein;
+                animation-name: author1slidein;
+            }
+            
+            @keyframes author1slidein {
+                from {
+                    -webkit-transform: translate3d(-100%, 0, 0);
+                    transform: translate3d(-100%, 0, 0);
+                    visibility: visible;
+                }
+                
+                to {
+                    -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0);
+                    
+                }
+            }
+            
+            75% {
+                font-size: 300%;
+                margin-left: 25%;
+                width: 150%;
+            }
+            
+            #quote2{
+                font-size: 1.5em;
+                animation-duration: 3s;
+                animation-name: quote2slidein;                
+            }
+            
+            @keyframes quote2slidein {
+                from {
+                    margin-left: 100%;
+                    width: 300%;
+                }
+                
+                75% {
+                    font-size: 300%;
+                    margin-left: 25%;
+                    width: 150%;
+                }
+                
+                to {
+                    margin-left: 0%;
+                    width: 100%;
+                }
+            }
+            
+            #author2 {
+                margin-top: 0;
+                font-size: 3em;
+                color: olive;
+                animation-duration: 4s;
+                -webkit-animation-name:author1slidein;
+                animation-name: author1slidein;
+            }
+            
+            @keyframes author1slidein {
+                from {
+                    -webkit-transform: translate3d(-100%, 0, 0);
+                    transform: translate3d(-100%, 0, 0);
+                    visibility: visible;
+                }
+                
+                to {
+                    -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+           
+            @-webkit-keyframes fadeIn {
+                from {
+                opacity: 0;
+                }
+
+                to {
+                opacity: 1;
+                }
+            }
+
+            @keyframes fadeIn {
+                from {
+                opacity: 0;
+                }
+
+                to {
+                opacity: 1;
+                }
+            }
+
+            #fadeIn {
+                
+                -webkit-animation-name: fadeIn;
+                animation-name: fadeIn;
+                animation-duration: 6s;
+                color: red;
+                }
+            
+            
+            
+
+            @-webkit-keyframes rotateIn {
+                from {
+                    -webkit-transform-origin: center;
+                    transform-origin: center;
+                    -webkit-transform: rotate3d(0, 0, 1, -200deg);
+                    transform: rotate3d(0, 0, 1, -200deg);
+                    opacity: 0;
+                    }
+
+                to {
+                    -webkit-transform-origin: center;
+                    transform-origin: center;
+                    -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0);
+                    opacity: 1;
+                    }
+            }
+
+            @keyframes rotateIn {
+                from {
+                    -webkit-transform-origin: center;
+                    transform-origin: center;
+                    -webkit-transform: rotate3d(0, 0, 1, -200deg);
+                    transform: rotate3d(0, 0, 1, -200deg);
+                    opacity: 0;
+                }
+
+                to {
+                    -webkit-transform-origin: center;
+                    transform-origin: center;
+                    -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0);
+                    opacity: 1;
+                }
+            }
+
+                .rotateIn {
+                    font-weight: 100;
+                    font-size: 4em;
+                    margin-top: 100px;
+                    margin-bottom: 10px;
+                    color: dodgerblue;
+                    animation-duration: 6s;
+                    -webkit-animation-name: rotateIn;
+                    animation-name: rotateIn;
+                }
+            
+            
+            
+            
+        </style>
+    </head>
+    
+    <body>
+        
+        <h1 class="rotateIn">Team work quotes</h1>
+
+
+        <p id="quote1">"Alone we can do so little; <span id="fadeIn">together</span> we can do so much."</p>
+        
+        <p id="author1">-Helen Keller</p>
+    
+    
+   
+         <p id="quote2"> "None of us, including me, ever do great things. But we can all do small things, with great love, and together we can do something wonderful."</p>
+        
+        <p id="author2">-Mother Teresa</p>
+
+        
+        
+    
+
+      
+    <script>
+       
+    </script>
+    
+    </body>
+        </html>

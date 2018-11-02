@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title> CSS Animation| Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="CSS Animation for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        
+        <style>
+            #quote1 {
+                font-size: 2em;
+                margin-bottom: 0;
+                animation-duration: 4s;
+                animation-name: quote1slidein;
+            }
+            
+            @keyframes quote1slidein {
+                from {
+                    margin-left: 100%;
+                    width: 300%
+                }
+                
+                to {
+                    margin-left: 0%;
+                    width: 100%;
+                    
+                }
+            }
+            
+            #author1 {
+                margin-top: 0;
+                font-size: 3em;
+                color: darkmagenta;
+                animation-duration: 4s;
+                -webkit-animation-name:author1slidein;
+                animation-name: author1slidein;
+            }
+            
+            @keyframes author1slidein {
+                from {
+                    -webkit-transform: translate3d(-100%, 0, 0);
+                    transform: translate3d(-100%, 0, 0);
+                    visibility: visible;
+                }
+                
+                to {
+                    -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0);
+                    
+                }
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        <p id="quote1">"Alone we can do so little; together we can do so much."</p>
+        
+        <p id="author1">-Helen Keller</p>
+    
+    
+    
+    
+    
+
+      
+    <script>
+       
+    </script>
+    
+    </body>
+        </html>

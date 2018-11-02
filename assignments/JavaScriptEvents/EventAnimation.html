@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title> JavaScript Events| Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="Events for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        
+        <style>
+            body {
+                padding: 100px;
+                background-color: aquamarine;
+            }
+            
+           #blah {
+               animation: movingBall 2s 3 ease-in-out;
+               width: 250px;
+               height: 250px;
+               border-radius: 50%;
+               background-color: aliceblue; 
+               margin: 0 auto;
+            }
+           
+            @keyframes movingBall {
+                0% {
+                    transform: translate3d(200px, 0px, 0px);
+                    opacity: 0;
+                }
+                50% {
+                    opacity: .5;
+                }
+                100% {
+                    transform: translate3d(-200px, 0px, 0px);
+                }
+            }
+            
+        </style>
+    </head>
+    
+<body>
+    <h1>Animation event</h1>
+    <p>Animation start is pink, animation update is purple and animation end is gray.</p>
+    <div id ="blah"></div>
+    
+    
+    
+    
+
+      
+    <script>
+        var myElement = document.querySelector("#blah");
+        
+        myElement.addEventListener("animationstart", start, false);
+        myElement.addEventListener("animationiteration", update, false);
+        myElement.addEventListener("animationend", end, false);
+        
+        function start(e) {
+            document.body.style.backgroundColor ="hotpink";
+        }
+        
+        function update(e) {
+            document.body.style.backgroundColor ="darkmagenta";
+        }
+        
+        function end(e) {
+            document.body.style.backgroundColor ="gray";
+        }
+    </script>
+    
+    </body>
+        </html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title> CSS Transform| Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="CSS Transform for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        
+        <style>
+            .boxelement {
+                display: inline-block;
+                background-color: crimson;
+                height: 100px;
+                width: 100px;
+                font-size: 1px;
+                padding: 1px;
+                color: white;
+                margin-right: 5px;
+                margin-left: 50px;
+                animation: skew 3s infinite;
+                transform: skew(20deg);
+                animation-direction: alternate;
+                opacity: .7;
+            }
+
+                @keyframes skew {
+                    0% {
+                    transform: skewX(30deg);
+                    }
+                    100% {
+                    transform: skewX(-30deg);
+                    }
+                }
+            
+            
+            .boxelementrotate {
+                display: inline-block;
+                background-color: peru;
+                height: 100px;
+                width: 100px;
+                font-size: 1px;
+                padding: 1px;
+                color: white;
+                margin-right: 5px;
+                margin-left: 5px;
+                animation: roll 3s infinite;
+                transform: rotate(30deg);
+                opacity: .7;
+            }
+
+                @keyframes roll {
+                    0% {
+                        transform: rotate(0);
+                    }
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+            
+            .square {
+                height: 100px;
+                width: 100px;
+                background-color: seagreen;
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                align-content: center;
+                color: white;
+                padding: 5px;
+                margin: 10px;
+                animation: shimmy 3s infinite;
+                animation-direction: alternate;
+                opacity: .5;
+            }
+
+            @keyframes shimmy {
+                0% {
+                    transform: translate(0, 0);    
+                }
+                100% {
+                    transform: translate(20px, 50px);
+                }
+            }
+
+            
+            body, html {
+                height: 100%;
+            }
+            
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items:flex-start;
+                justify-content: center;
+            }
+            
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content:space-around;
+                margin: 20px;
+                padding: 30px;
+                background-color: papayawhip;
+            }
+            
+            h1 {
+                display:flex;
+            }
+            
+            img {
+                width: 20%;
+            }
+            #scale {
+                transform: scaleX(1.5);
+                transform: scaleY(0.4);
+                
+            }
+            
+            
+        </style>
+    </head>
+    
+    <body>
+        <h1>Transform</h1>
+        
+        
+        <div class= "container">
+            <h3>skew</h3>
+            <div class = "boxelement"></div>
+            <div class = "boxelement"></div>
+            <div class = "boxelement"></div>
+            <div class = "boxelement"></div>
+        </div>
+    
+        <div class= "container">
+            <h3>rotate</h3>
+            <div class = "boxelementrotate"></div>
+            <div class = "boxelementrotate"></div>
+            <div class = "boxelementrotate"></div>
+            <div class = "boxelementrotate"></div>
+        </div>
+        
+        <div class= "container">
+            <h3>translate</h3>
+            <div class = "square"></div>
+            <div class = "square"></div>
+            <div class = "square"></div>
+            <div class = "square"></div>
+        </div>
+        
+        <div class= "container">
+            <h3>Scale</h3>
+            
+            <img src="icon.jpg" alt="Good works" title="heart icon">
+            <img id="scale" src="icon.jpg" alt="Good works" title="heart icon">
+
+        </div>
+        
+    
+    </body>
+        </html>

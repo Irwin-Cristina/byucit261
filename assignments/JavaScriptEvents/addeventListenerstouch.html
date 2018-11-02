@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title> JavaScript Events| Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="Events for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        
+        <style>
+            button {
+                margin: 10px;
+            }
+            
+/*
+            body {
+                height: 200px;
+                background: beige;
+            }
+*/
+            
+            .dot {
+                height: 8px;
+                width: 8px;
+                border-radius: 4px;
+                background: blue;
+                position: absolute;
+            }
+            
+            dot {
+                position: absolute;
+                display: block;
+                border: 2px solid red; 
+                border-radius: 50px;
+                height: 100px; 
+                width: 100px;
+            }
+            
+            #progress {
+                border-bottom: 2px solid blue;
+                width: 0;
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+        </style>
+    </head>
+    
+<body>        
+    <h1>Event Objects</h1>
+    
+
+    
+ <p>Touch this page on a mobile device or ipad</p>
+    
+
+    <script>
+
+        
+        function update(event) {
+            for (let dot; dot = document.querySelector("dot");) {
+                dot.remove();
+            }
+            for (let i = 0; i < event.touches.length; i++) {
+                let {pageX, pageY} = event.touches[i];
+                let dot = document.createElement("dot");
+                dot.style.left = (pageX - 50) + "px";
+                dot.style.top = (pageY - 50) + "px";
+                document.body.appendChild(dot);
+            }
+        }
+        window.addEventListener("touchstart", update);
+        window.addEventListener("touchmove", update);
+        window.addEventListener("touchend", update);
+        
+        
+        
+    </script>
+    
+    </body>
+        </html>

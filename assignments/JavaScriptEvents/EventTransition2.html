@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title> JavaScript Events Transition| Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="Events for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        
+        <style>
+
+           body {
+            color: darkolivegreen;
+            background-color: floralwhite;
+            }
+
+            .greeting {
+                border: 20px solid darkolivegreen;
+                display: block;
+                width: 40vw;
+                max-width: 30rem;
+                margin: 1em auto;
+                padding: 20px;
+                background-color: white;
+  
+                font-family: "Helvetica", sans-serif;
+                font-weight: 700;
+                font-size: 8vw;
+  
+                text-align: center;
+                text-transform: uppercase;
+  
+                transition: background-color .5s linear, transform 1s ease;
+            }
+
+            .cta {
+                font-size: .7em;
+                display: block;
+                }
+
+            .selected {
+                background-color: lightgreen;
+                transform: rotate(360deg);
+                }
+
+
+
+
+            
+        </style>
+    </head>
+    
+<body>
+    
+    <h1>Event Transition</h1>
+
+    
+    
+    <div class="greeting">
+        Brother James
+    <span class="cta">click me</span></div>
+
+        
+      
+    <script>
+        let greeting = document.querySelector('.greeting');
+            greeting.addEventListener('click', function() {
+            this.classList.toggle('selected');
+            });
+
+            
+
+
+        
+  
+    </script>
+    
+    </body>
+        </html>

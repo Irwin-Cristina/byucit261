@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title> JavaScript Events| Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="Events for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        
+        <style>
+            body {
+                margin: 10px auto;
+                width: 470px;
+            }
+            h3 {
+                margin: 0;
+                padding-bottom: .3em;
+                padding-right: 20px;
+                font-size: 1.1em;
+            }
+           
+            p {
+                margin: 0;
+                padding: 0 0 .5em;
+            }
+            
+            .pane {
+                background: darkgrey;
+                padding: 10px 20px 10px;
+                border-top: solid 2px darkmagenta;
+                position: relative;
+            }
+            
+            .remove-button {
+                position: absolute;
+                font-size: 110%;
+                top: 0;
+                color: darkmagenta;
+                right: 10px;
+                display: block;
+                width: 24px;
+                height: 24px;
+                border: none;
+                background: transparent;
+                cursor: pointer;
+            }
+            
+        </style>
+    </head>
+    
+<body>
+    
+    <h1>Close Button with Event Handler</h1>
+    <div>
+        <div class ="pane">
+            <h3>Isa</h3>
+            <p>Isa is kind, loving and funny. She is helpful and curious. She plays soccer, piano and cello. She is a good friend to everyone. She is social and enjoys being around people. She was born in California and lives in Utah.</p>
+        </div>
+        <div class ="pane">
+            <h3>Isaac</h3>
+            <p>Isa is kind, loving and funny. He is a hardworker and curious. He is creative. He plays soccer, piano and guitar. He is a great big brother and son. He is a good cook and likes to read. He was born in Utah and lives in Utah.</p>
+        </div> 
+        <div class ="pane">
+            <h3>Simon</h3>
+            <p>Simon is smart and funny. He is sweet and full of life. He likes to learn and understand the way things work. He enjoys being around his friends. He plays soccer, piano and viola. He is a good student. He was born in Utah and lives in Utah.</p>
+        </div>    
+    
+    </div>
+    
+
+    
+    
+    
+
+      
+    <script>
+        let panes = document.querySelectorAll('.pane');
+        
+        
+        for(let pane of panes) {
+            pane.insertAdjacentHTML("afterbegin", '<button class="remove-button">[x]</button');
+               
+            //button becomes the first child of pane
+            pane.firstChild.onclick = () => pane.remove();
+        }
+        
+    </script>
+    
+    </body>
+        </html>
