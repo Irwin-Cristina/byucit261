@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title> CSS Transformation| Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="CSS Animation and Javascript for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        
+        <style>
+            #box {
+                margin: auto;
+                border: 3px solid pink;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-color: crimson;
+                color: white;
+            }
+            
+            h1 {
+                text-align: center;
+                margin-top: 75px;
+            }
+
+        </style>
+    </head>
+    
+    <body>
+        
+        <button onclick="rotate()">Rotate</button>
+        <button onclick="scale()">Scale</button>
+        <button onclick="move()">Move</button>
+        <button onclick="skew()">Skew</button>
+
+
+
+        <button onclick="original()">return</button>
+                
+        
+        
+        <div id="box">
+            <h1>smile :)</h1>
+        </div>
+    <script>
+      function rotate() {
+          document.getElementById("box").style.WebkitTransform = "rotate(90deg)";
+          document.getElementById("box").style.transform = "rotate(90deg)";
+      }
+        
+        
+        function scale() {
+          document.getElementById("box").style.WebkitTransform = "scale(1.5, 1.5)";
+          document.getElementById("box").style.transform = "scale(1.5, 1.5)";
+      }
+        
+        function move() {
+          document.getElementById("box").style.WebkitTransform = "translate(50px,50px)";
+          document.getElementById("box").style.transform = "translate(50px,50px)";
+      }
+        
+        function skew() {
+          document.getElementById("box").style.WebkitTransform = "skewX(60deg)";
+          document.getElementById("box").style.transform = "skewX(60deg)";
+      }
+        
+        function original() {
+          document.getElementById("box").style.WebkitTransform = "rotate(0deg)";
+          document.getElementById("box").style.transform = "rotate(0deg)";
+      }
+        
+        
+        
+        
+        
+        
+    </script>
+    
+    </body>
+        </html>
