@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title> CSS Animation| Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="CSS Animation for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        
+        <style>
+            .object {
+                height: 300px;
+                width: 300px;
+                margin: 0 auto;
+                background-color: purple;
+                animation-name: change;
+                animation-duration: 2.5s;
+                animation-timing-function: linear;
+                animation-delay: 0s;
+                animation-direction: alternate;
+                animation-iteration-count: infinite;
+                animation-fill-mode: none;
+                animation-play-state: running;
+            }
+            
+            
+            
+            @keyframes change {
+                0% {
+                    transform: scale(.1);
+                    background-color: purple;
+                    border-radius: 100%;
+                }
+                
+                20% {
+                    background-color: blue;
+                }
+                
+                
+                50% {
+                    background-color: green;
+                }
+                
+                100% {
+                    transform: scale(1.5);
+                    background-color: yellow;
+                }
+            }
+            
+            body, html {
+                height: 100%;
+            }
+            
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        <div class="object"></div>
+    
+    
+    </body>
+        </html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title> JavaScript Events Transition| Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="Events for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        
+        <style>
+            div {
+                margin: 20px;
+                width: 200px;
+                height: 200px;
+                background: rgba(113,23,114,1);
+                transition-property: transform background;
+                transition-duration: 3s;
+                transition-delay: 1s;
+                }
+            
+            
+            #btngo {
+                
+                margin:20px;
+            }
+            
+            
+            
+        </style>
+    </head>
+    
+<body>
+    
+    <h1>Event Transition</h1>
+    <div id= "box"></div>
+    <button id="btngo">Watch me Disappear</button>
+    <button id="btnback">Watch me Re-appear.</button>
+    
+    
+    
+        
+      
+    <script>
+        
+        const box = document.getElementById("box");
+        const btngo = document.getElementById("btngo");
+        const btnback = document.getElementById("btnback");
+        
+        btngo.addEventListener("click", () => box.style.transform ="rotate(90deg)");
+        btngo.addEventListener("click", () => box.style.backgroundColor ="rgba(255,0,0,0)");
+        
+        btnback.addEventListener("click", () => box.style.transform ="rotate(-90deg)");
+        btnback.addEventListener("click", () => box.style.backgroundColor ="rgba(113,23,114,1)");
+
+
+        
+
+    </script>
+    
+    </body>
+        </html>
