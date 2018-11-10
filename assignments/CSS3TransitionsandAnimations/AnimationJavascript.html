@@ -74,14 +74,14 @@
      
     <script>
        function stretch() {
-            document.getElementById("box").style.WebkitAnimationName = "newmove"; // Code for Chrome, Safari, and Opera
+            document.getElementById("box").style.WebkitAnimationName = "newmove"; 
             document.getElementById("box").style.animationName = "newmove";
            document.getElementById("text").innerHTML = "Caution";
            
        }
         
         function stop() {
-            document.getElementById("box").style.WebkitAnimationName = "none"; // Code for Chrome, Safari, and Opera
+            document.getElementById("box").style.WebkitAnimationName = "none"; 
             document.getElementById("box").style.animationName = "none";
             document.getElementById("box").style.backgroundColor = "red";
             document.getElementById("box").style.color = "white";
@@ -90,7 +90,7 @@
        }
         
         function reset() {
-            document.getElementById("box").style.WebkitAnimationName = "none"; // Code for Chrome, Safari, and Opera
+            document.getElementById("box").style.WebkitAnimationName = "none"; 
             document.getElementById("box").style.animationName = "none";
             document.getElementById("box").style.backgroundColor = "green";
            document.getElementById("text").innerHTML = "Go";
