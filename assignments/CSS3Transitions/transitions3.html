@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title> CSS Transitions| Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="CSS Transitions for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        
+        <style>
+            h1 {
+                text-align: center;
+            }
+            
+            #f1_container, #f1_container1, #f1_container2, #f1_container3 {
+                position: relative;
+                margin: 10px auto;
+                width: 450px;
+                height: 390px;
+                z-index: 1;
+                background-color: #aaa;
+            }
+            
+/*
+            #f1_container1 {
+                position: relative;
+                margin: 10px auto;
+                width: 450px;
+                height: 390px;
+                z-index: 1;
+                background-color: #aaa;
+            }
+            
+            #f1_container2 {
+                position: relative;
+                margin: 10px auto;
+                width: 450px;
+                height: 390px;
+                z-index: 1;
+                background-color: #aaa;
+            }
+            
+            #f1_container3 {
+                position: relative;
+                margin: 10px auto;
+                width: 450px;
+                height: 390px;
+                z-index: 1;
+                background-color: #aaa;
+            }
+            
+*/
+            
+            #f1_container, #f1_container1, #f1_container2, #f1_container3 {
+                perspective: 1000;
+            }
+            
+            #f1_card {
+                width: 100%;
+                height: 100%;
+                transform-style: preserve-3d;
+                transition: all 1.0s linear;
+            }
+            
+            #f1_card1 {
+                width: 100%;
+                height: 100%;
+                transform-style: preserve-3d;
+                transition: all 1.5s ease;
+            }
+            
+            #f1_card2 {
+                width: 100%;
+                height: 100%;
+                transform-style: preserve-3d;
+                transition: all 2.0s ease-out;
+            }
+            
+            #f1_card3 {
+                width: 100%;
+                height: 100%;
+                transform-style: preserve-3d;
+                transition: all 0.5s linear;
+            }
+            
+            #f1_container:hover #f1_card {
+                transform: rotateY(180deg);
+            }
+            
+            #f1_container1:hover #f1_card1 {
+                transform: rotateY(180deg);
+            }
+            
+            #f1_container2:hover #f1_card2 {
+                transform: rotateY(180deg);
+            }
+            #f1_container3:hover #f1_card3 {
+                transform: rotateY(180deg);
+            }
+            
+            #caption {
+                text-transform: uppercase;
+                text-align: center;
+                font-family: sans-serif;
+                position: absolute;
+                top: 325px;
+                left: 85px;
+                font-weight: bold;
+            }
+            
+            #caption1 {
+                text-transform: uppercase;
+                text-align: center;
+                font-family: sans-serif;
+                position: absolute;
+                top: 330px;
+                left: 190px;
+                font-weight: bold;
+            }
+            
+            #caption2 {
+                text-transform: uppercase;
+                text-align: center;
+                font-family: sans-serif;
+                position: absolute;
+                top: 330px;
+                left: 190px;
+                font-weight: bold;
+            }
+            
+            #caption3 {
+                text-transform: uppercase;
+                text-align: center;
+                font-family: sans-serif;
+                position: absolute;
+                top: 330px;
+                left: 190px;
+                font-weight: bold;
+            }
+            
+            span {
+                font-weight: 100;
+            }
+            
+            .face {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+            }
+            
+            .face.back {
+                display: block;
+                transform: rotateY(180deg);
+                box-sizing: border-box;
+                padding: 0px;
+                color: white;
+                text-align: center;
+/*                background-color: #aaa;*/
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        <h1>Transition 3</h1>
+        <div id = "f1_container">
+            <p id ="caption">Irwin Family Picture 2018: <br> <span>Scott, Cristina, Isa, Isaac, Simon.</span></p>
+        <div id = "f1_card" class="shadow">
+            <div class="face">
+                <img src="IrwinFamily.jpg"/>
+            </div>
+            <div class = "back">
+                <img src="IrwinFamily2.jpg"/>
+            </div>
+        </div>
+        </div>
+        
+        <div id = "f1_container1">
+            <p id ="caption1">Isa Irwin</p>
+        <div id = "f1_card1" class="shadow">
+            <div class="face">
+                <img src="Isa.jpg"/>
+            </div>
+            <div class = "back">
+                <img src="Isa2.jpg"/>
+            </div>
+        </div>
+        </div>
+        
+        <div id = "f1_container2">
+            <p id ="caption2">Isaac Irwin</p>
+        <div id = "f1_card2" class="shadow">
+            <div class="face">
+                <img src="Isaac.jpg"/>
+            </div>
+            <div class = "back">
+                <img src="Isaac2.jpg"/>
+            </div>
+        </div>
+        </div>
+        
+        <div id = "f1_container3">
+            <p id ="caption3">Simon Irwin</p>
+        <div id = "f1_card3" class="shadow">
+            <div class="face">
+                <img src="Simon.jpg"/>
+            </div>
+            <div class = "back">
+                <img src="Simon2.jpg"/>
+            </div>
+        </div>
+        </div>
+        
+        <script>
+        
+        </script>
+        
+        
+    </body>
+        </html>

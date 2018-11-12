@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title> CSS Transitions| Cristina Irwin | BYU-Idaho</title>
+        <meta name="description" content="CSS Transitions for Cristina Irwin in CIT 261: Mobile Developement at BYU-Idaho.">
+        <meta name="viewport" content="width=device-width, inital-scale=1">
+        
+        <style>
+           
+            body {
+                padding: 2em;
+            }
+            
+            h1 {
+                text-align: center;
+                font-family: sans-serif;
+                font-size: 2.5em;
+            }
+
+            #one {
+                
+                color: white;
+                padding-top: 38px;
+                padding-left: 20px;
+
+                
+            }
+            
+            #two {
+                color: white;
+                padding-top: 38px;
+                padding-left: 20px;
+                
+            }
+            
+            #three {
+                color: white;
+                padding-top: 38px;
+                padding-left: 23px;
+            }
+            
+            #four {
+                color:white;
+                padding-top: 38px;
+                padding-left: 11px;
+            }
+            
+            #five {
+                color: white;
+                padding-top: 38px;
+                padding-left: 22px;
+            }
+            
+            .box {
+                background-color: red;
+                height: 100px;
+                width: 100px;
+                border-radius:50px;
+                font-size: .8em;
+                transform: translateX(0);
+                transition: transform 1s linear;
+            }
+
+            .end-state .box {
+                
+                transform: translateX(400px);
+            }
+            
+
+            
+            .ease-in {
+                background-color: orange;
+                transition-timing-function: ease-in;
+            }
+
+            .ease {
+                background-color: darkgreen;
+                transition-timing-function: ease;
+            }
+            
+            .ease-out {
+                background-color: yellowgreen;
+                transition-timing-function: ease-out;
+            }
+
+
+            .ease-in-out {
+                background-color: darkblue;
+                transition-timing-function: ease-in-out;
+            }
+
+            section {
+                margin-top: 1em;
+                margin-left: auto;
+                margin-right: auto;
+                border: 1px dashed black;
+                width: 500px;
+            }
+
+            button {
+                font-size: 1.4em;
+                padding: 0.5em 0.75em;
+            }
+            
+            #none {
+                border: none;
+            }
+            
+            .subheading {
+                font-family: sans-serif;
+                margin: 10px;
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        
+        <h1>Transition Timing Function Race</h1>
+        
+        <section>
+        <p class ="subheading">Linear</p>
+        <div class="box linear">
+        <p id="one">Will I win</p>
+        </div>
+        </section>
+
+        <section>
+        <p class ="subheading">Ease-in</p>
+        <div class="box ease-in">
+        <p id="two"> Or will I</p>
+        </div>
+        </section>
+
+        <section>
+        <p class ="subheading">Ease out</p>
+        <div class="box ease-out">
+        <p id="three">No, I will</p>
+        </div>
+        </section>
+
+        <section>
+        <p class ="subheading">Ease</p>
+        <div class="box ease" >
+        <p id="four">What about me</p>
+        </div>
+        </section>
+
+        <section>
+        <p class ="subheading">Ease in out </p>
+        <div class="box ease-in-out">
+        <p  id="five">Me, I win.</p>
+        </div>
+        </section>
+
+        <section id="none">
+        <button>Start transition</button>
+        </section>
+        
+        
+        <script>
+            const button = document.querySelector('button')
+
+            button.addEventListener('click', _ => document.body.classList.toggle('end-state'))
+        
+        </script>
+        
+        
+    </body>
+        </html>
