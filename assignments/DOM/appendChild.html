@@ -80,12 +80,31 @@ a {
 
 .delete{
     float: right;
+    height:19px;
+    width: 50px;
     background: #819932;
     padding: 6px;
     border-radius: 4px;
     cursor: pointer;
     color: white;
+    -webkit-transition-property: width height;
+    -webkit-transition-duration: 2s;
+    -webkit-transition-timing-function: ease;
+    transition-property: width height;
+    transition-duration: 2s;
+    transition-timing-function: ease;
 }
+        
+.deletetrans {
+    height: 30px;
+    width: 60px;
+    -webkit-transition-property: width height;
+    -webkit-transition-duration: 2s;
+    -webkit-transition-timing-function: ease;
+    transition-property: width height;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+        }      
 
 .delete:hover{
     background: #333;
@@ -245,12 +264,19 @@ span.author {
 
     </div>
         <script>
-            
-            
-            
-            
-            
-            
+            //trigger a transition
+            function updateTransition3() {
+         var el2 = document.querySelector("span.delete");
+   
+            if (el2) {
+                el2.className = "deletetrans";
+            } else {
+                el2 = document.querySelector("span.deletetrans");
+                el2.className = "delete";
+            }
+   
+        return el2;
+        }
             
             
             
