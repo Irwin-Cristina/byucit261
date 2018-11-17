@@ -43,6 +43,8 @@
                 height: 100%;
                 transform-style: preserve-3d;
                 transition: all 1.0s linear;
+                -webkit-transition: all 1.0s linear;
+                
             }
             
             #f1_card1 {
@@ -50,6 +52,7 @@
                 height: 100%;
                 transform-style: preserve-3d;
                 transition: all 1.5s ease;
+                -webkit-transition: all 1.5s ease;
             }
             
             #f1_card2 {
@@ -57,6 +60,7 @@
                 height: 100%;
                 transform-style: preserve-3d;
                 transition: all 2.0s ease-out;
+                -webkit-transition: all 2.0s ease-out;
             }
             
             #f1_card3 {
@@ -64,21 +68,26 @@
                 height: 100%;
                 transform-style: preserve-3d;
                 transition: all 0.5s linear;
+                -webkit-transition: all 0.5s linear;
             }
             
             #f1_container:hover #f1_card {
                 transform: rotateY(180deg);
+                -webkit-transform: rotateY(180deg);
             }
             
             #f1_container1:hover #f1_card1 {
                 transform: rotateY(180deg);
+                -webkit-transform: rotateY(180deg);
             }
             
             #f1_container2:hover #f1_card2 {
                 transform: rotateY(180deg);
+                -webkit-transform: rotateY(180deg);
             }
             #f1_container3:hover #f1_card3 {
                 transform: rotateY(180deg);
+                -webkit-transform: rotateY(180deg);
             }
             
             #caption {
@@ -135,6 +144,7 @@
             .face.back {
                 display: block;
                 transform: rotateY(180deg);
+                -webkit-transform: rotateY(180deg);
                 box-sizing: border-box;
                 padding: 0px;
                 color: white;
