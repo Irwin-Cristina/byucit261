@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>JSON from a public API</title>
+        <meta name="author" content="Cristina Irwin">
+        <style>
+            h1 {
+                font-family: monospace;
+                font-size: 6em;
+                margin: 20px 20px 0px 20px;
+            }
+            
+            h2 {
+                font-family: sans-serif;
+                margin-top: 0px;
+                padding: 20px;
+                color: cadetblue;
+            }
+            
+            #btn {
+                margin: 0px 20px 20px 20px;
+                background-color:cornflowerblue;
+                color: aliceblue;
+                height: 50px;
+                width: 300px;
+                border-radius: 10px;
+            }
+        </style>
+        
+    </head>
+    
+    <body>
+        <header>
+        <h1>JSON and AJAX</h1>
+        <h2>with JSON from a public API</h2>
+        <button id="btn">Weather in Provo, Utah</button>
+        </header>
+        
+        <div id="animal-info"></div>
+      
+        <script>
+            var animalContainer= document.getElementById("animal-info");
+            
+            var btn = document.getElementById("btn");
+            btn.addEventListener("click", function() {
+                var ourRequest = new XMLHttpRequest();
+                ourRequest.open('GET', 'https://api.wunderground.com/api/991f1337748bc20b/conditions/q/UT/Provo.json');
+                ourRequest.onload = function() {
+                var ourData = JSON.parse(ourRequest.responseText);
+                renderHTML(ourData);   
+                
+                //document.write(ourData.current_observation.dewpoint_c)
+                //console.log(ourRequest.responseText);
+            };
+            ourRequest.send();
+                
+                });
+                
+            function renderHTML(ourData) {
+                document.write("<h3>Location is " + ourData.current_observation.display_location.full + ".</h3>");
+                document.write("<br>");
+                document.write("Dewpoint is " + ourData.current_observation.dewpoint_f);
+                document.write("<br>");
+                document.write("Windchill is " + ourData.current_observation.windchill_string);
+                document.write("<br>");
+                document.write("Feels like " + ourData.current_observation.feelslike_string);
+                document.write("<br>");
+                document.write("Temperatures is " + ourData.current_observation.temp_f);
+                document.write("<br>");
+                document.write("Relative humidity is " + ourData.current_observation.relative_humidity);
+            }
+        
+                //
+                
+                //for (i = 0; i < data.length; i++) {
+                    //htmlString += "<p>" + data[i].current_observation + " Name is " + data[i].full;
+                    //+ " that likes to eat ";
+                    //for(ii =0; ii<data[i].foods.likes.length; ii++) {
+                       //if (ii==0) {
+                            //htmlString += data[i].foods.likes[ii];
+                       //} else {
+                           //htmlString += " and " + data[i].foods.likes[ii];
+                       //}
+                    //}
+                    
+                    //htmlString += ' and dislikes ';
+                    //for(ii =0; ii<data[i].foods.dislikes.length; ii++) {
+                       //if (ii==0) {
+                            //htmlString += data[i].foods.dislikes[ii];
+                       //} else {
+                           //htmlString += " and " + data[i].foods.dislikes[ii];
+                       //}
+                    //}
+                    
+                   // htmlString += '.</p>';
+                //}
+                //animalContainer.insertAdjacentHTML('beforeend', htmlString);
+            //}
+            //}
+                
+            
+        
+            //Create the XHR Object
+            //let xhr = new XMLHttpRequest;
+            //Call the open function, GET-type of request, url, true-asynchronous
+            //xhr.open('GET', 'https://api.wunderground.com/api/991f1337748bc20b/conditions/q/UT/Highland.json', true)
+            //call the onload 
+            //xhr.onload = function() 
+                //{
+            //check if the status is 200(means everything is okay)
+            //if (this.status === 200) 
+                    //{
+                    //return server response as an object with JSON.parse
+                    //console.log(JSON.parse(this.responseText));
+                    //document.write(JSON.parse(this.responseText));
+                    //}
+                //}
+        //call send
+        //xhr.send();
+        //Common Types of HTTP Statuses
+        // 200: OK
+        // 404: ERROR
+        // 403: FORBIDDEN
+            
+      
+        </script>
+        
+
+    </body>
+    
+</html>

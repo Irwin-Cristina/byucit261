@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <meta name="author" content="Cristina Irwin">
+        
+        <!-- Google API font reference -->    
+        <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Heebo" rel="stylesheet">
+        <!-- external style references in the proper cascading order -->
+        
+    </head>
+    
+    <body>
+        <header>
+        <h1>JSON and AJAX</h1>
+        <button id="btn">Fetch Info for hours of the Cafe at the Cooper Hewitt Museum</button>
+        </header>
+        
+        <div id="animal-info"></div>
+      
+        <script>
+            var pageCounter = 1;
+            var animalContainer= document.getElementById("animal-info");
+            
+            var btn = document.getElementById("btn");
+            
+            btn.addEventListener("click", function() {
+                var ourRequest = new XMLHttpRequest();
+                ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-1.json');
+                ourRequest.onload = function() {
+                    if(ourRequest.status >= 200 && ourRequest.status < 400) {
+                        var ourData = JSON.parse(ourRequest.responseText);
+                        renderHTML(ourData);
+                    } else {
+                        console.log("We connected to the server but it returned an error.")
+                    }
+                
+                };
+                
+                ourRequest.onerror = function() {
+                    console.log("Connection error");
+                };
+                
+                ourRequest.send();
+            });
+            
+            function renderHTML(data) {
+                var htmlString = "";
+                
+                for (i = 0; i < data.length; i++) {
+                    htmlString += "<p>" + data[i].name + " is a " + data[i].species + " that likes to eat ";
+                    for(ii =0; ii<data[i].foods.likes.length; ii++) {
+                       if (ii==0) {
+                            htmlString += data[i].foods.likes[ii];
+                       } else {
+                           htmlString += " and " + data[i].foods.likes[ii];
+                       }
+                    }
+                    
+                    htmlString += ' and dislikes ';
+                    for(ii =0; ii<data[i].foods.dislikes.length; ii++) {
+                       if (ii==0) {
+                            htmlString += data[i].foods.dislikes[ii];
+                       } else {
+                           htmlString += " and " + data[i].foods.dislikes[ii];
+                       }
+                    }
+                    
+                    htmlString += '.</p>';
+                }
+                animalContainer.insertAdjacentHTML('beforeend', htmlString);
+            }
+               
+                
+            
+        
+            //Create the XHR Object
+            //let xhr = new XMLHttpRequest;
+            //Call the open function, GET-type of request, url, true-asynchronous
+            //xhr.open('GET', 'https://api.wunderground.com/api/991f1337748bc20b/conditions/q/UT/Highland.json', true)
+            //call the onload 
+            //xhr.onload = function() 
+                //{
+            //check if the status is 200(means everything is okay)
+            //if (this.status === 200) 
+                    //{
+                    //return server response as an object with JSON.parse
+                    //console.log(JSON.parse(this.responseText));
+                    //document.write(JSON.parse(this.responseText));
+                    //}
+                //}
+        //call send
+        //xhr.send();
+        //Common Types of HTTP Statuses
+        // 200: OK
+        // 404: ERROR
+        // 403: FORBIDDEN
+            
+      
+        </script>
+        
+
+    </body>
+    
+</html>
