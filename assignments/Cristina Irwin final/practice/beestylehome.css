@@ -1,0 +1,168 @@
+
+body {
+    font-family: "Arial", Gadget, sans-serif;
+    min-width: 870px;
+    margin: 0px;
+    padding: 0px;
+    background-color: #f8ffb0;
+}
+
+#brownbar{
+    height: 72px;
+    background-color: #52471b;
+    border-bottom: 5px solid #87753d;
+    
+}
+
+
+h1, h2, h3, h4, h5, h6{}
+
+
+header {
+    background-image: url("images/comb.jpg");
+    text-align: center;
+    background-color: #f2cc10;
+}
+
+header img {
+    margin-top: -43px
+}
+
+
+header h1 {
+    font-size: 16px;
+    font-weight: lighter;
+    color: #87752d;
+    margin-top: 0px;
+}
+
+/* Navigtion */
+
+nav {
+    margin-top: 20px;
+    height: 50px;
+    background-color: #87752d;
+    text-align: center;
+    border-top: 3px solid #52471b;
+    border-bottom: 3px solid #52471b;
+   
+}
+
+nav ul {
+    display: inline-block;
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+}
+
+nav ul li a {
+    float: left;
+    color: #f8ffb0;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: .5em;
+    margin-right: 16px;
+}
+
+
+nav a:link {
+    display: block;
+}
+
+nav a:visited {
+    color: #e9ed86;
+}
+
+nav a:hover {
+    color: #fffc58;
+}
+
+nav a:active {
+    color: #ffffff;
+}
+
+main {
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 40px;
+    width: 870px;
+    margin: auto;
+    
+}
+
+.picturebox {
+    width: 187px;
+    padding-right: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-left: auto;
+    display: inline-block;
+    
+}
+
+figure {
+    margin: 0 0 40px 0;
+    padding: 9px;
+    text-align: center;
+    
+}
+
+figure img {
+    border: 6px solid #87752d;
+    border-radius: 5px;
+  
+}
+
+figcaption {
+    font-size: 20px;
+    font-weight: bolder;
+    color: #f8ffb0;
+    background-color: #87752d;
+    width: 199px;
+    margin-top: -10px;
+    padding-top: 6px;
+    padding-bottom: 8px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+blockquote {
+    text-align: center;
+    font-size: 30px;
+    width: 537px;
+    font-weight: bolder;
+    color: #706a3a;
+    margin: auto;
+    padding-bottom: 130px;
+}
+
+blockquote p {
+    margin: 0px;
+}
+
+footer {
+    position: fixed;
+    right:0;
+    bottom: 0;
+    background-color: #52471b;
+    padding-top: 30px;
+    padding-bottom: 0px;
+    width: 100%;
+    height: 90px;
+    clear: both;
+    margin-bottom: 0px;
+    margin-top: 1px;
+    border-top: 6px solid #87752d;
+}
+
+footer p{
+    font-size: .9em;
+    line-height: 4px;
+    font-weight: bolder;
+    text-align: center;
+    color: #f2cc10;
+}
+
